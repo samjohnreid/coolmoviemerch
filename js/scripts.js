@@ -1,7 +1,7 @@
 const placeholderProductGrid = document.getElementById('product-grid');
 
 function getProducts() {
-  fetch('../data/products.json')
+  fetch('https://cool-movie-merch.firebaseio.com/products.json')
   .then((res) => res.json())
   .then((data) => {
     const templateProductGrid = `
@@ -28,3 +28,16 @@ function getProducts() {
 }
 
 getProducts();
+
+
+
+function fetchProducts() {
+
+  fetch('https://cool-movie-merch.firebaseio.com/test.json')
+    .then((res) => res.json())
+    .then(data => console.log(data))
+  ;
+
+}
+
+fetchProducts();
