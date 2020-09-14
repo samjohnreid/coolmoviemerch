@@ -1,0 +1,185 @@
+.footer {
+
+  &__license-grid-wrapper {
+    background: #fff;
+  }
+
+  &__license-grid {
+    margin: 0 auto;
+    padding-bottom: 50px;
+    width: 1200px;
+  }
+
+  &__license-grid-list {
+    align-items: center;
+    display: flex;
+    margin-bottom: 25px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    li {
+      padding: 0 20px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    a {
+      display: block;
+    }
+    
+    img {
+      width: 100%;
+    }
+  }
+
+  &__newsletter-wrapper {
+    background: var(--color-gray-darkest);
+    padding: 50px 0;
+  }
+
+  &__newsletter {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1200px;
+  }
+
+  &__newsletter-blurb {
+
+    h2 {
+      color: #fff;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: var(--color-gray-light);
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  &__newsletter-form {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 50px;
+
+    input {
+      background: #fff url(../img/icon-email.png) no-repeat 25px center;
+      background-size: 46px;
+      border: none;
+      border-radius: 53px 0 0 53px;
+      color: var(--color-gray-darkest);
+      flex-grow: 1;
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: bold;
+      height: 51px;
+      padding: 0 0 2px 80px;
+
+      &::placeholder {
+        color: var(--color-gray-lighter);
+      }
+    }
+
+    button {
+      background: var(--color-primary);
+      border-radius: 0 53px 53px 0;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: bold;
+      height: 53px;
+      padding: 0 25px 2px 25px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 1200px;
+  }
+
+  &__links-logo {
+    background: url(../img/logo-cool-movie-merch-color-primary.png) no-repeat;
+    background-size: contain;
+    display: block;
+    font-size: 0;
+    height: 28px;
+    width: 267px;
+  }
+
+  &__links-list {
+    margin-left: 150px;
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    
+    a {
+      color: var(--color-gray-light);
+      font-size: 15px;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__social-wrapper {
+    border-top: 1px solid var(--color-gray-dark);
+    padding: 25px 0;
+  }
+
+  &__social {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1200px;
+
+    small {
+      color: var(--color-gray-light);
+      font-size: 15px;
+    }
+  }
+
+  &__social-links {
+    display: flex;
+
+    li:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    a {
+      background: url(../img/icons-social.png) no-repeat;
+      background-size: 96px;
+      display: block;
+      font-size: 0;
+      height: 24px;
+      width: 24px;
+
+      &:hover {
+        background-position-y: -24px;
+      }
+    }
+
+    .facebook a { background-position-x: -24px; }
+    .twitter a { background-position-x: -48px; }
+    .pinterest a { background-position-x: -72px; }
+  }
+}
