@@ -80,8 +80,8 @@
       text-decoration: none;
     }
 
-    li:hover,
-    .active {
+    .active,
+    li:hover {
 
       a::after {
         background: var(--color-primary);
