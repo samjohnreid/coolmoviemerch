@@ -153,7 +153,8 @@ table {
 .item-grid__title {
   font-size: 14px;
   font-weight: bold;
-  line-height: 1.5; }
+  line-height: 1.5;
+  margin-bottom: 10px; }
   .hero__title a,
   .item-grid__title a {
     color: #000;
@@ -254,8 +255,7 @@ table {
     line-height: 1.25;
     padding-right: 250px; }
   .hero__price {
-    font-size: 22px;
-    margin: 10px 0 20px; }
+    font-size: 22px; }
   .hero__nav {
     align-items: center;
     background: var(--color-gray-lightest);
