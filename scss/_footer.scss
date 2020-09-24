@@ -1,7 +1,10 @@
 .footer {
+  border-top: 1px solid var(--color-gray-lightest);
+  margin-top: -1px;
 
   &__license-grid-wrapper {
     background: #fff;
+    padding-top: 50px;
   }
 
   &__license-grid {
