@@ -127,20 +127,18 @@ table {
 .item-grid {
   background: #fff;
   border-top: 1px solid var(--color-gray-lightest); }
+  .item-grid__list-wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 1200px; }
   .item-grid__list {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    margin: 0 auto;
-    width: 1200px; }
+    margin: 0 -25px; }
   .item-grid__item {
     border-bottom: 1px solid var(--color-gray-lightest);
     border-right: 1px solid var(--color-gray-lightest);
     padding: 25px; }
-    .item-grid__item:nth-child(4n), .item-grid__item:last-child {
-      border-right: none;
-      padding-right: 0; }
-    .item-grid__item:nth-child(5n), .item-grid__item:first-child {
-      padding-left: 0; }
   .item-grid__image {
     margin-bottom: 10px; }
 
