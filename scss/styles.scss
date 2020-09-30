@@ -15,5 +15,9 @@ body {
 
 main {
   background: #fff;
-  padding-top: 50px;
+  padding-top: 25px;
+
+  @include tablet {
+    padding-top: 50px;
+  }
 }

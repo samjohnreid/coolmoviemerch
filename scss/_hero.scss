@@ -1,13 +1,14 @@
 .hero {
   border-radius: 40px;
-  margin: 0 auto 50px auto;
+  margin: 0 15px 25px 15px;
+  max-width: 1200px;
   position: relative;
-  width: 1200px;
+
+  @include tablet {
+    margin: 0 auto 50px auto;
+  }
 
   &::after {
-    background: url(../img/wave.svg) no-repeat;
-    background-position-y: calc(100% - 16px);
-    // background-position-y: calc(100% - 1px);
     border: 4px solid var(--color-gray-lightest);
     border-radius: 40px;
     content: '';
@@ -17,42 +18,115 @@
     position: absolute;
     top: 0;
     width: calc(100% - 8px);
+
+    @include tablet {
+      background: url(../img/wave.svg) no-repeat;
+      background-position-y: calc(100% - 16px);
+    }
   }
 
   &__product {
     display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
   &__image {
-    width: 50%;
+    margin-bottom: 0;
+    position: relative;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    &::after {
+      bottom: -20px;
+      content: url(../img/wave.svg);
+      position: absolute;
+      width: 100%;
+
+      @include tablet {
+        content: none;
+      }
+    }
+
+    img {
+      margin: 4px auto 0 auto;
+      max-width: 50%;
+
+      @include tablet {
+        margin: 0;
+        max-width: 100%;
+      }
+    }
   }
 
   &__details {
     align-self: center;
+    background: var(--color-gray-lightest);
+    border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    padding: 0 25px 25px 25px;
+    
+    @include tablet {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      width: 50%;
+    }
   }
 
   &__title {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.25;
-    padding-right: 250px;
+    padding-right: 10px;
+    position: relative;
+    z-index: 1;
+
+    @include tablet {
+      font-size: 18px;
+      padding-right: 250px;
+    }
   }
 
   &__price {
-    font-size: 22px;
+    font-size: 18px;
+
+    @include tablet {
+      font-size: 22px;
+    }
+  }
+
+  &__tags {
+
+    a {
+      border: 2px solid var(--color-gray-light);
+      color: var(--color-gray-light);
+
+      @include tablet {
+        border: 2px solid var(--color-gray-lighter);
+        color: var(--color-gray-lighter);
+      }
+    }
   }
 
   &__nav {
     align-items: center;
     background: var(--color-gray-lightest);
     border-radius: 0 0 36px 36px;
-    display: flex;
+    display: none;
     height: 150px;
     justify-content: center;
     position: relative;
     z-index: 1;
+
+    @include tablet {
+      display: flex;
+    }
 
     li:not(:last-child) {
       margin-right: 5px;
