@@ -354,20 +354,17 @@ table {
         padding: 0;
         width: 50%; } }
   .hero__title {
-    font-size: 14px;
-    line-height: 1.25;
     padding-right: 10px;
     position: relative;
     z-index: 1; }
     @media only screen and (min-device-width: 768px) {
       .hero__title {
         font-size: 18px;
+        line-height: 1.25;
         padding-right: 250px; } }
-  .hero__price {
-    font-size: 18px; }
-    @media only screen and (min-device-width: 768px) {
-      .hero__price {
-        font-size: 22px; } }
+  @media only screen and (min-device-width: 768px) {
+    .hero__price {
+      font-size: 22px; } }
   .hero__tags a {
     border: 2px solid var(--color-gray-light);
     color: var(--color-gray-light); }

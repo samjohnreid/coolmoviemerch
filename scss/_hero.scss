@@ -81,20 +81,18 @@
   }
 
   &__title {
-    font-size: 14px;
-    line-height: 1.25;
     padding-right: 10px;
     position: relative;
     z-index: 1;
 
     @include tablet {
       font-size: 18px;
+      line-height: 1.25;
       padding-right: 250px;
     }
   }
 
   &__price {
-    font-size: 18px;
 
     @include tablet {
       font-size: 22px;
