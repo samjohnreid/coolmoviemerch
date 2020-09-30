@@ -90,12 +90,32 @@
     }
   }
 
+  &__nav {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+  
   &__nav-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding: 10px 0;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 0;
+    }
 
     li {
       margin: 0 25px;
+      text-align: center;
     }
 
     a {
@@ -104,21 +124,37 @@
       display: flex;
       font-size: 14px;
       font-weight: bold;
-      height: 50px;
+      height: 40px;
+      justify-content: center;
       position: relative;
       text-decoration: none;
+
+      @include tablet {
+        height: 50px;
+      }
     }
 
     .active,
     li:hover {
+      
+      a {
+        color: var(--color-primary);
+
+        @include tablet {
+          color: #fff;
+        }
+      }
 
       a::after {
-        background: var(--color-primary);
-        bottom: 0;
-        content: '';
-        height: 5px;
-        position: absolute;
-        width: 100%;
+        
+        @include tablet {
+          background: var(--color-primary);
+          bottom: 0;
+          content: '';
+          height: 5px;
+          position: absolute;
+          width: 100%;
+        }
       }
     }
   }

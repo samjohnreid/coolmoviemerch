@@ -4,27 +4,21 @@
 
   &__list-wrapper {
     margin: 0 auto;
+    max-width: 1200px;
     overflow: hidden;
-    width: 1200px;
   }
   
   &__list {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 0 -25px;
-  }
+    grid-template-columns: auto auto;
+    margin: 0 -1px;
 
-  &__item {
-    border-bottom: 1px solid var(--color-gray-lightest);
-    border-right: 1px solid var(--color-gray-lightest);
-    padding: 25px;
-
-    &:last-child {
-      border-right-color: #fff;
+    @include tablet {
+      margin: 0 -25px;
     }
-  }
 
-  &__image {
-    margin-bottom: 10px;
+    @include tablet {
+      grid-template-columns: auto auto auto auto;
+    }
   }
 }

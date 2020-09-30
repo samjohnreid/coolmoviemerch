@@ -1,7 +1,22 @@
 .hero,
 .item-grid {
   
+  &__item {
+    border-bottom: 1px solid var(--color-gray-lightest);
+    border-right: 1px solid var(--color-gray-lightest);
+    padding: 15px;
+
+    @include tablet {
+      padding: 25px;
+    }
+
+    &:last-child {
+      border-right-color: #fff;
+    }
+  }
+  
   &__image {
+    margin-bottom: 10px;
   
     img {
       display: block;
@@ -35,14 +50,16 @@
   
   &__tags {
     display: flex;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
   
     li {
       font-size: 10px;
       font-weight: bold;
+      margin: 0 4px 4px 0;
   
-      &:not(:last-child) {
-        margin-right: 4px;
+      &:last-child {
+        margin-right: 0;
       }
     }
   
