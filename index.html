@@ -44,7 +44,13 @@
       
       <ul class="hero__products">
         <li class="hero__product">
-          <div class="hero__image"><img src="img/items/hero/apron.jpg" alt=""></div>
+          <div class="hero__image">
+            <picture>
+              <source srcset="img/items/hero/apron.jpg" media="(min-width: 768px)">
+              <source srcset="img/items/hero/mobile/apron.jpg">
+              <img src="img/items/hero/apron.jpg" alt="">
+            </picture>
+          </div>
           <div class="hero__details">
             <h2 class="hero__title"><a href="">Star Wars Darth Vader Adult Size 100% Cotton Adjustable Black Apron</a></h2>
             <div class="hero__price"><span>$</span>43.99</div>
