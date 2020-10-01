@@ -14,11 +14,12 @@
     margin: 0 -1px;
 
     @include tablet {
-      margin: 0 -25px;
+      grid-template-columns: auto auto auto;
     }
-
-    @include tablet {
+    
+    @include desktop {
       grid-template-columns: auto auto auto auto;
+      margin: 0 -25px;
     }
   }
 }

@@ -6,7 +6,7 @@
     background: #fff;
     padding-top: 25px;
 
-    @include tablet {
+    @include desktop {
       padding-top: 50px;
     }
   }
@@ -17,6 +17,10 @@
     padding: 0 15px 25px 15px;
 
     @include tablet {
+      padding: 0 25px 25px 25px;
+    }
+    
+    @include desktop {
       padding: 0 0 50px 0;
     }
   }
@@ -59,7 +63,7 @@
     background: var(--color-gray-darkest);
     padding: 25px 0;
 
-    @include tablet {
+    @include desktop {
       padding: 50px 0;
     }
   }
@@ -75,6 +79,10 @@
     text-align: center;
 
     @include tablet {
+      padding: 0 25px;
+    }
+    
+    @include desktop {
       flex-direction: row;
       padding: 0;
       text-align: left;
@@ -114,7 +122,7 @@
     flex-grow: 1;
     margin-top: 20px;
 
-    @include tablet {
+    @include desktop {
       margin-top: 0;
       padding-left: 50px;
     }
@@ -188,6 +196,10 @@
 
     @include tablet {
       flex-direction: row;
+      padding: 25px;
+    }
+
+    @include desktop {
       padding: 50px 0;
     }
   }
@@ -210,8 +222,12 @@
     text-align: center;
     
     @include tablet {
-      margin: 0 0 0 150px;
+      margin: 0 0 0 100px;
       text-align: left;
+    }
+
+    @include desktop {
+      margin: 0 0 0 150px;
     }
 
     &:last-child {
@@ -245,6 +261,14 @@
   &__social-wrapper {
     border-top: 1px solid var(--color-gray-dark);
     padding: 25px 0;
+
+    @include tablet {
+      padding: 25px;
+    }
+
+    @include desktop {
+      padding: 25px 0;
+    }
   }
 
   &__social {
