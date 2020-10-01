@@ -14,6 +14,14 @@
     justify-content: center;
     position: relative;
     max-width: 1200px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+
+    @include desktop {
+      justify-content: center;
+    }
   }
 
   &__logo {
@@ -28,8 +36,12 @@
 
     @include tablet {
       background-image: url(../img/logo-cool-movie-merch.png);
-      left: 0;
+      left: 25px;
       width: 267px;
+    }
+
+    @include desktop {
+      left: 0;
     }
   }
 
@@ -40,6 +52,10 @@
     width: 100%;
 
     @include tablet {
+      margin: 0 25px 0 317px;
+    }
+
+    @include desktop {
       margin: 0;
     }
 
@@ -114,15 +130,22 @@
     }
 
     li {
-      margin: 0 25px;
+      font-size: 14px;
       text-align: center;
+
+      @include tablet {
+        margin: 0 10px;
+      }
+
+      @include desktop {
+        margin: 0 25px;
+      }
     }
 
     a {
       align-items: center;
       color: #fff;
       display: flex;
-      font-size: 14px;
       font-weight: bold;
       height: 40px;
       justify-content: center;

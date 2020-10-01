@@ -68,6 +68,12 @@ table {
     justify-content: center;
     position: relative;
     max-width: 1200px; }
+    @media only screen and (min-width: 768px) {
+      .masthead__upper {
+        justify-content: flex-end; } }
+    @media only screen and (min-width: 1200px) {
+      .masthead__upper {
+        justify-content: center; } }
   .masthead__logo {
     background: url(../img/logo-cool-movie-merch-mobile.png) no-repeat;
     background-size: contain;
@@ -77,17 +83,23 @@ table {
     left: 15px;
     position: absolute;
     width: 28px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .masthead__logo {
         background-image: url(../img/logo-cool-movie-merch.png);
-        left: 0;
+        left: 25px;
         width: 267px; } }
+    @media only screen and (min-width: 1200px) {
+      .masthead__logo {
+        left: 0; } }
   .masthead__search {
     display: flex;
     margin: 0 60px 0 68px;
     max-width: 587px;
     width: 100%; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
+      .masthead__search {
+        margin: 0 25px 0 317px; } }
+    @media only screen and (min-width: 1200px) {
       .masthead__search {
         margin: 0; } }
     .masthead__search input {
@@ -122,12 +134,12 @@ table {
     position: absolute;
     right: 15px;
     width: 28px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .masthead__hamburger {
         display: none; } }
   .masthead__nav {
     display: none; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .masthead__nav {
         display: block; } }
     .masthead__nav--active {
@@ -137,34 +149,39 @@ table {
     flex-direction: column;
     justify-content: center;
     padding: 10px 0; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .masthead__nav-list {
         flex-direction: row;
         padding: 0; } }
     .masthead__nav-list li {
-      margin: 0 25px;
+      font-size: 14px;
       text-align: center; }
+      @media only screen and (min-width: 768px) {
+        .masthead__nav-list li {
+          margin: 0 10px; } }
+      @media only screen and (min-width: 1200px) {
+        .masthead__nav-list li {
+          margin: 0 25px; } }
     .masthead__nav-list a {
       align-items: center;
       color: #fff;
       display: flex;
-      font-size: 14px;
       font-weight: bold;
       height: 40px;
       justify-content: center;
       position: relative;
       text-decoration: none; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .masthead__nav-list a {
           height: 50px; } }
     .masthead__nav-list .active a,
     .masthead__nav-list li:hover a {
       color: var(--color-primary); }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .masthead__nav-list .active a,
         .masthead__nav-list li:hover a {
           color: #fff; } }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .masthead__nav-list .active a::after,
       .masthead__nav-list li:hover a::after {
         background: var(--color-primary);
@@ -185,10 +202,10 @@ table {
     display: grid;
     grid-template-columns: auto auto;
     margin: 0 -1px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .item-grid__list {
         margin: 0 -25px; } }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .item-grid__list {
         grid-template-columns: auto auto auto auto; } }
 
@@ -197,7 +214,7 @@ table {
   border-bottom: 1px solid var(--color-gray-lightest);
   border-right: 1px solid var(--color-gray-lightest);
   padding: 15px; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .hero__item,
     .item-grid__item {
       padding: 25px; } }
@@ -216,13 +233,13 @@ table {
   font-weight: bold;
   line-height: 1.25;
   margin-bottom: 10px; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .hero__title,
     .item-grid__title {
       line-height: 1.5; } }
   .hero__title a,
   .item-grid__title a {
-    color: #000;
+    color: var(--color-gray-darkest);
     display: block;
     text-decoration: none; }
 
@@ -296,7 +313,10 @@ table {
   margin: 0 15px 25px 15px;
   max-width: 1200px;
   position: relative; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 768px) {
+    .hero {
+      margin: 0 25px 25px 25px; } }
+  @media only screen and (min-width: 1200px) {
     .hero {
       margin: 0 auto 50px auto; } }
   .hero::after {
@@ -309,20 +329,20 @@ table {
     position: absolute;
     top: 0;
     width: calc(100% - 8px); }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 1200px) {
       .hero::after {
         background: url(../img/wave.svg) no-repeat;
         background-position-y: calc(100% - 16px); } }
   .hero__product {
     display: flex;
     flex-direction: column; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .hero__product {
         flex-direction: row; } }
   .hero__image {
     margin-bottom: 0;
     position: relative; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .hero__image {
         width: 50%; } }
     .hero__image::after {
@@ -330,45 +350,59 @@ table {
       content: url(../img/wave.svg);
       position: absolute;
       width: 100%; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
+        .hero__image::after {
+          bottom: -80px;
+          width: 200%; } }
+      @media only screen and (min-width: 1200px) {
         .hero__image::after {
           content: none; } }
     .hero__image img {
       margin: 4px auto 0 auto;
       max-width: 50%; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
+        .hero__image img {
+          max-width: 70%; } }
+      @media only screen and (min-width: 1200px) {
         .hero__image img {
           margin: 0;
           max-width: 100%; } }
   .hero__details {
-    align-self: center;
     background: var(--color-gray-lightest);
     border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
-    padding: 0 25px 25px 25px; }
-    @media only screen and (min-device-width: 768px) {
+    padding: 0 25px 25px 25px;
+    z-index: 1; }
+    @media only screen and (min-width: 768px) {
       .hero__details {
+        align-self: center;
         background: none;
         border-radius: 0;
-        padding: 0;
+        padding: 25px 0;
         width: 50%; } }
+    @media only screen and (min-width: 1200px) {
+      .hero__details {
+        padding: 0; } }
   .hero__title {
     padding-right: 10px;
     position: relative;
     z-index: 1; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
+      .hero__title {
+        padding-right: 100px; } }
+    @media only screen and (min-width: 1200px) {
       .hero__title {
         font-size: 18px;
         line-height: 1.25;
         padding-right: 250px; } }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 1200px) {
     .hero__price {
       font-size: 22px; } }
   .hero__tags a {
     border: 2px solid var(--color-gray-light);
     color: var(--color-gray-light); }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .hero__tags a {
         border: 2px solid var(--color-gray-lighter);
         color: var(--color-gray-lighter); } }
@@ -381,7 +415,7 @@ table {
     justify-content: center;
     position: relative;
     z-index: 1; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .hero__nav {
         display: flex; } }
     .hero__nav li:not(:last-child) {
@@ -400,14 +434,14 @@ table {
   .footer__license-grid-wrapper {
     background: #fff;
     padding-top: 25px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__license-grid-wrapper {
         padding-top: 50px; } }
   .footer__license-grid {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 15px 25px 15px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__license-grid {
         padding: 0 0 50px 0; } }
   .footer__license-grid-list {
@@ -418,7 +452,7 @@ table {
       margin-bottom: 0; }
     .footer__license-grid-list li {
       padding: 0 5px; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .footer__license-grid-list li {
           padding: 0 20px; } }
       .footer__license-grid-list li:first-child {
@@ -432,7 +466,7 @@ table {
   .footer__newsletter-wrapper {
     background: var(--color-gray-darkest);
     padding: 25px 0; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__newsletter-wrapper {
         padding: 50px 0; } }
   .footer__newsletter {
@@ -444,7 +478,7 @@ table {
     max-width: 1200px;
     padding: 0 15px;
     text-align: center; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__newsletter {
         flex-direction: row;
         padding: 0;
@@ -455,7 +489,7 @@ table {
     font-weight: bold;
     line-height: 1.15;
     margin-bottom: 10px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__newsletter-blurb h2 {
         line-height: 1; } }
   .footer__newsletter-blurb h3 {
@@ -464,7 +498,7 @@ table {
     font-weight: bold;
     line-height: 1.25;
     padding: 0 30px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__newsletter-blurb h3 {
         line-height: 1;
         padding: 0; } }
@@ -472,7 +506,7 @@ table {
     display: flex;
     flex-grow: 1;
     margin-top: 20px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__newsletter-form {
         margin-top: 0;
         padding-left: 50px; } }
@@ -489,7 +523,7 @@ table {
       height: 51px;
       max-width: 190px;
       padding: 0 0 2px 75px; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .footer__newsletter-form input {
           background-position: 25px center;
           max-width: none;
@@ -508,17 +542,17 @@ table {
       height: 53px;
       padding: 0 15px 2px 15px;
       white-space: nowrap; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .footer__newsletter-form button {
           padding: 0 25px 2px 25px; } }
       .footer__newsletter-form button::after {
         content: 'Join!'; }
-        @media only screen and (min-device-width: 768px) {
+        @media only screen and (min-width: 768px) {
           .footer__newsletter-form button::after {
             content: none; } }
       .footer__newsletter-form button span {
         font-size: 0; }
-        @media only screen and (min-device-width: 768px) {
+        @media only screen and (min-width: 768px) {
           .footer__newsletter-form button span {
             font-size: 18px; } }
   .footer__links {
@@ -527,7 +561,7 @@ table {
     margin: 0 auto;
     max-width: 1200px;
     padding: 25px 0; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__links {
         flex-direction: row;
         padding: 50px 0; } }
@@ -539,19 +573,19 @@ table {
     height: 28px;
     margin: 0 auto 25px auto;
     width: 267px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__links-logo {
         margin: 0; } }
   .footer__links-list {
     text-align: center; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__links-list {
         margin: 0 0 0 150px;
         text-align: left; } }
     .footer__links-list:last-child::before {
       content: '\b7\a0';
       color: var(--color-gray-light); }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .footer__links-list:last-child::before {
           content: ''; } }
     .footer__links-list li:not(:last-child) {
@@ -573,21 +607,21 @@ table {
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1200px; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__social {
         flex-direction: row; } }
     .footer__social small {
       color: var(--color-gray-light);
       font-size: 15px;
       order: 2; }
-      @media only screen and (min-device-width: 768px) {
+      @media only screen and (min-width: 768px) {
         .footer__social small {
           order: 1; } }
   .footer__social-links {
     display: flex;
     margin-bottom: 15px;
     order: 1; }
-    @media only screen and (min-device-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .footer__social-links {
         margin-bottom: 0;
         order: 2; } }
@@ -612,11 +646,12 @@ table {
 body {
   background: var(--color-gray-darker);
   color: var(--color-gray-darkest);
-  font-family: var(--font-primary); }
+  font-family: var(--font-primary);
+  min-width: 375px; }
 
 main {
   background: #fff;
   padding-top: 25px; }
-  @media only screen and (min-device-width: 768px) {
+  @media only screen and (min-width: 1200px) {
     main {
       padding-top: 50px; } }

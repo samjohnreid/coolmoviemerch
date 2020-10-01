@@ -5,6 +5,10 @@
   position: relative;
 
   @include tablet {
+    margin: 0 25px 25px 25px;
+  }
+
+  @include desktop {
     margin: 0 auto 50px auto;
   }
 
@@ -19,7 +23,7 @@
     top: 0;
     width: calc(100% - 8px);
 
-    @include tablet {
+    @include desktop {
       background: url(../img/wave.svg) no-repeat;
       background-position-y: calc(100% - 16px);
     }
@@ -49,6 +53,11 @@
       width: 100%;
 
       @include tablet {
+        bottom: -80px;
+        width: 200%;
+      }
+      
+      @include desktop {
         content: none;
       }
     }
@@ -58,6 +67,10 @@
       max-width: 50%;
 
       @include tablet {
+        max-width: 70%;
+      }
+      
+      @include desktop {
         margin: 0;
         max-width: 100%;
       }
@@ -65,18 +78,23 @@
   }
 
   &__details {
-    align-self: center;
     background: var(--color-gray-lightest);
     border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
     padding: 0 25px 25px 25px;
+    z-index: 1;
     
     @include tablet {
+      align-self: center;
       background: none;
       border-radius: 0;
-      padding: 0;
+      padding: 25px 0;
       width: 50%;
+    }
+
+    @include desktop {
+      padding: 0;
     }
   }
 
@@ -86,6 +104,10 @@
     z-index: 1;
 
     @include tablet {
+      padding-right: 100px;
+    }
+
+    @include desktop {
       font-size: 18px;
       line-height: 1.25;
       padding-right: 250px;
@@ -94,7 +116,7 @@
 
   &__price {
 
-    @include tablet {
+    @include desktop {
       font-size: 22px;
     }
   }
