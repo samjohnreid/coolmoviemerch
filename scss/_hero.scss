@@ -205,10 +205,13 @@
       margin-right: 5px;
     }
 
-    a {
+    button {
       background: var(--color-gray-lighter);
+      border: none;
+      cursor: pointer;
       display: block;
       height: 100px;
+      padding: 0;
       width: 100px;
     }
 

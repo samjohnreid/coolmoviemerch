@@ -50,6 +50,21 @@ const heroItems = heroes.map((hero) => {
   `;
 }).join('');
 
+const heroNavItems = heroes.map((hero) => {
+  return `
+    <li>
+      <button>
+        <picture>
+          <source srcset="img/items/hero/thumbnails/${hero.img}.jpg">
+          <img src="img/items/hero/thumbnails/${hero.img}.jpg" alt="">
+        </picture>
+      </button>
+    </li>
+  `;
+}).join('');
+
 const heroContainer = document.querySelector('.hero__products');
+const heroNavContainer = document.querySelector('.hero__nav');
 
 heroContainer.innerHTML = heroItems;
+heroNavContainer.innerHTML = heroNavItems;

@@ -466,10 +466,13 @@ table {
         display: flex; } }
     .hero__nav li:not(:last-child) {
       margin-right: 5px; }
-    .hero__nav a {
+    .hero__nav button {
       background: var(--color-gray-lighter);
+      border: none;
+      cursor: pointer;
       display: block;
       height: 100px;
+      padding: 0;
       width: 100px; }
     .hero__nav img {
       width: 100%; }
