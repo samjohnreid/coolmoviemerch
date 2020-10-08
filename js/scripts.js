@@ -1,4 +1,6 @@
-import * as products from './data.js';
+import movies from './movies.js';
+import categories from './categories.js';
+import heroes from './heroes.js';
 
 // ------------------------------------------------------------
 
@@ -13,48 +15,41 @@ hamburger.addEventListener('click', toggleMenu);
 
 // ------------------------------------------------------------
 
-const productsHero = products.products;
-
 const getMovie = (id) => {
-  const getEl = products.movies.find(el => el.id === id);
+  const getEl = movies.find(el => el.id === id);
   return getEl.title;
 }
 
 const getCategory = (id) => {
-  const getEl = products.categories.find(el => el.id === id);
+  const getEl = categories.find(el => el.id === id);
   return getEl.title;
 }
 
-const prodString = `
-  Product Name: ${products.products[0].title}
-  Movie: ${getMovie(products.products[0].movie)}
-  Category: ${getCategory(products.products[0].category)}
-`;
-
-const cool = productsHero.map((product) => {
+const heroItems = heroes.map((hero) => {
   return `
     <li class="hero__product">
       <div class="hero__image">
         <picture>
-          <source srcset="img/items/hero/apron.jpg" media="(min-width: 1200px)">
-          <source srcset="img/items/hero/tablet/apron.jpg" media="(min-width: 768px)">
-          <source srcset="img/items/hero/mobile/apron.jpg">
-          <img src="img/items/hero/apron.jpg" alt="">
+          <source srcset="img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
+          <source srcset="img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
+          <source srcset="img/items/hero/mobile/${hero.img}.jpg">
+          <img src="img/items/hero/${hero.img}.jpg" alt="">
         </picture>
       </div>
       <div class="hero__details">
-        <h2 class="hero__title"><a href="${product.url}">${product.title}</a></h2>
-        <div class="hero__price"><span>$</span>${product.price}</div>
+        <h2 class="hero__title"><a href="${hero.url}">${hero.title}</a></h2>
+        <div class="hero__price"><span>$</span>${hero.price}</div>
         <ul class="hero__tags">
-          <li><a href="">JOHN WICK</a></li>
-          <li><a href="">FIGURINES</a></li>
-          <li><a href="">NEW</a></li>
+          <li><a href="">${getMovie(hero.movie)}</a></li>
+          <li><a href="">${getCategory(hero.category)}</a></li>
         </ul>
         <div class="hero__more-details"><a href="">Product Details</a></div>
-        <button class="hero__button">BUY NOW</button>
+        <a href="${hero.url}" class="hero__button">BUY NOW</a>
       </div>
     </li>
   `;
 }).join('');
 
-console.log(cool);
+const heroContainer = document.querySelector('.hero__products');
+
+heroContainer.innerHTML = heroItems;
