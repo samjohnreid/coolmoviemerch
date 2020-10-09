@@ -1,14 +1,18 @@
 export default [
   {
     id: 1,
-    title: 'Figurines'
+    title: 'Home & Kitchen'
   },
   {
     id: 2,
-    title: 'Office'
+    title: 'Board Games'
   },
   {
     id: 3,
-    title: 'Home & Kitchen'
+    title: 'Accessories'
+  },
+  {
+    id: 4,
+    title: 'LEGO'
   }
 ];

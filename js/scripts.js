@@ -48,8 +48,8 @@ const heroItems = heroes.map((hero) => {
         <h2 class="hero__title"><a href="${hero.url}">${hero.title}</a></h2>
         <div class="hero__price"><span>$</span>${hero.price}</div>
         <ul class="hero__tags">
-          <li><a href="">${getMovie(hero.movie)}</a></li>
-          <li><a href="">${getCategory(hero.category)}</a></li>
+          <li><a href="">test</a></li>
+          <li><a href="">test</a></li>
         </ul>
         <div class="hero__more-details"><a href="">Product Details</a></div>
         <a href="${hero.url}" class="hero__button">BUY NOW</a>
