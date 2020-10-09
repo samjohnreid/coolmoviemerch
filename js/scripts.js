@@ -69,8 +69,10 @@ const heroNavItems = heroes.map((hero) => {
 const heroContainer = document.querySelector('.hero__products');
 const heroNavContainer = document.querySelector('.hero__nav');
 
-heroContainer.innerHTML = heroItems;
-heroNavContainer.innerHTML = heroNavItems;
+if (heroContainer) {
+  heroContainer.innerHTML = heroItems;
+  heroNavContainer.innerHTML = heroNavItems;
+}
 
 // ------------------------------------------------------------
 

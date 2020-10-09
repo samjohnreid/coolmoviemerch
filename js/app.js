@@ -14,7 +14,7 @@ const app = `
 
   <main>
     
-    ${path === 'home' ? hero : null}
+    ${path === 'home' ? hero : ''}
     
     ${grid}
 
