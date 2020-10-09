@@ -1,6 +1,7 @@
-import movies from './movies.js';
-import categories from './categories.js';
-import heroes from './heroes.js';
+import movies from '../data/movies.js';
+import categories from '../data/categories.js';
+import heroes from '../data/heroes.js';
+import grid from '../data/grid.js';
 
 // ------------------------------------------------------------
 
@@ -25,15 +26,17 @@ const getCategory = (id) => {
   return getEl.title;
 }
 
+// ------------------------------------------------------------
+
 const heroItems = heroes.map((hero) => {
   return `
     <li class="hero__product">
       <div class="hero__image">
         <picture>
-          <source srcset="img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
-          <source srcset="img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
-          <source srcset="img/items/hero/mobile/${hero.img}.jpg">
-          <img src="img/items/hero/${hero.img}.jpg" alt="">
+          <source srcset="/img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
+          <source srcset="/img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
+          <source srcset="/img/items/hero/mobile/${hero.img}.jpg">
+          <img src="/img/items/hero/${hero.img}.jpg" alt="">
         </picture>
       </div>
       <div class="hero__details">
@@ -55,8 +58,8 @@ const heroNavItems = heroes.map((hero) => {
     <li>
       <button>
         <picture>
-          <source srcset="img/items/hero/thumbnails/${hero.img}.jpg">
-          <img src="img/items/hero/thumbnails/${hero.img}.jpg" alt="">
+          <source srcset="/img/items/hero/thumbnails/${hero.img}.jpg">
+          <img src="/img/items/hero/thumbnails/${hero.img}.jpg" alt="">
         </picture>
       </button>
     </li>
@@ -68,3 +71,32 @@ const heroNavContainer = document.querySelector('.hero__nav');
 
 heroContainer.innerHTML = heroItems;
 heroNavContainer.innerHTML = heroNavItems;
+
+// ------------------------------------------------------------
+
+const gridItems = grid.map((item) => {
+  return `
+    <li class="item-grid__item">
+      <div class="item-grid__image">
+        <picture>
+          <source srcset="/img/items/item-01.jpg">
+          <img src="/img/items/item-01.jpg" alt="">
+        </picture>
+      </div>
+      <div class="item-grid__details">
+        <h2 class="item-grid__title"><a href="">Sabers Chop Lightsaber Led Light Up Star Wars Chopsticks</a></h2>
+        <div class="item-grid__price"><span>$</span>43.99</div>
+        <ul class="item-grid__tags">
+          <li><a href="">STAR WARS</a></li>
+          <li><a href="">KITCHEN</a></li>
+          <li><a href="">NEW</a></li>
+        </ul>
+        <div class="item-grid__more-details"><a href="">Product Details</a></div>
+        <a href="" class="item-grid__button">BUY NOW</a>
+      </div>
+    </li>
+  `;
+}).join('');
+
+const gridContainer = document.querySelector('.item-grid__list');
+gridContainer.innerHTML = gridItems;
