@@ -11,7 +11,7 @@ export default [
   },
   {
     id: 2,
-    title: 'Sabers Chop Lightsaber Led Light Up Star Wars Chopsticks',
+    title: 'xxSabers Chop Lightsaber Led Light Up Star Wars Chopsticks',
     price: 43.99,
     url: 'https://amzn.to/30wiZYY',
     category: 2,
@@ -31,7 +31,7 @@ export default [
   },
   {
     id: 1,
-    title: 'Star Wars Darth Vader Adult Size 100% Cotton Adjustable Black Apron',
+    title: 'xxStar Wars Darth Vader Adult Size 100% Cotton Adjustable Black Apron',
     price: 14.99,
     url: 'https://amzn.to/2SB10fJ',
     category: 3,
@@ -51,7 +51,7 @@ export default [
   },
   {
     id: 3,
-    title: 'Sabers Chop Lightsaber Led Light Up Star Wars Chopsticks',
+    title: 'bl Sabers Chop Lightsaber Led Light Up Star Wars Chopsticks',
     price: 43.99,
     url: 'https://amzn.to/30wiZYY',
     category: 1,

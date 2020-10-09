@@ -88,21 +88,22 @@ if (path === 'home') {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
-          <picture>
-            <source srcset="/img/items/item-01.jpg">
-            <img src="/img/items/item-01.jpg" alt="">
-          </picture>
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>43.99</div>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="">STAR WARS</a></li>
-            <li><a href="">KITCHEN</a></li>
-            <li><a href="">NEW</a></li>
+            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
-          <a href="" class="item-grid__button">BUY NOW</a>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
     `;
@@ -127,21 +128,22 @@ if (path === 'search-results') {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
-          <picture>
-            <source srcset="/img/items/item-01.jpg">
-            <img src="/img/items/item-01.jpg" alt="">
-          </picture>
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>43.99</div>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="">STAR WARS</a></li>
-            <li><a href="">KITCHEN</a></li>
-            <li><a href="">NEW</a></li>
+            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
-          <a href="" class="item-grid__button">BUY NOW</a>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
     `;
@@ -166,21 +168,22 @@ if (path === 'category') {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
-          <picture>
-            <source srcset="/img/items/item-01.jpg">
-            <img src="/img/items/item-01.jpg" alt="">
-          </picture>
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>43.99</div>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="">STAR WARS</a></li>
-            <li><a href="">KITCHEN</a></li>
-            <li><a href="">NEW</a></li>
+            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
-          <a href="" class="item-grid__button">BUY NOW</a>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
     `;
@@ -205,21 +208,22 @@ if (path === 'movie') {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
-          <picture>
-            <source srcset="/img/items/item-01.jpg">
-            <img src="/img/items/item-01.jpg" alt="">
-          </picture>
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>43.99</div>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="">STAR WARS</a></li>
-            <li><a href="">KITCHEN</a></li>
-            <li><a href="">NEW</a></li>
+            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
-          <a href="" class="item-grid__button">BUY NOW</a>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
     `;
