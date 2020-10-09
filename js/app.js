@@ -9,7 +9,6 @@ const path = appContainer.dataset.path;
 // ------------------------------------------------------------
 
 const app = `
-
   ${header}
 
   <main>

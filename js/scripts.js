@@ -86,7 +86,7 @@ const gridItems = grid.map((item) => {
         </picture>
       </div>
       <div class="item-grid__details">
-        <h2 class="item-grid__title"><a href="">Sabers Chop Lightsaber Led Light Up Star Wars Chopsticks</a></h2>
+        <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
         <div class="item-grid__price"><span>$</span>43.99</div>
         <ul class="item-grid__tags">
           <li><a href="">STAR WARS</a></li>
@@ -102,3 +102,14 @@ const gridItems = grid.map((item) => {
 
 const gridContainer = document.querySelector('.item-grid__list');
 gridContainer.innerHTML = gridItems;
+
+// ------------------------------------------------------------
+
+// TODO: make this secure...?? 😬
+const searchQuery = new URLSearchParams(window.location.search).get('search').toLowerCase();
+
+const searchResults = grid.filter((item) => {
+  return item.title.toLowerCase().includes(searchQuery);
+});
+
+console.log('searchResults: ', searchResults);

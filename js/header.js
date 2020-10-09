@@ -4,7 +4,7 @@ export default `
     <div class="masthead__upper-wrapper">
       <div class="masthead__upper">
         <a href="" class="masthead__logo">Cool Movie Merch</a>
-        <form action="search-results" method="GET" class="masthead__search" role="search">
+        <form action="/search-results" method="GET" class="masthead__search" role="search">
           <input type="text" name="search" placeholder="Search Cool Movie Merch...">
           <button>Search</button>
         </form>
