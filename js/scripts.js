@@ -3,6 +3,11 @@ import categories from '../data/categories.js';
 import heroes from '../data/heroes.js';
 import grid from '../data/grid.js';
 
+const appContainer = document.getElementById('app');
+const path = appContainer.dataset.path;
+
+const gridContainer = document.querySelector('.item-grid__list');
+
 // ------------------------------------------------------------
 
 // Mobile nav menu
@@ -76,40 +81,149 @@ if (heroContainer) {
 
 // ------------------------------------------------------------
 
-const gridItems = grid.map((item) => {
-  return `
-    <li class="item-grid__item">
-      <div class="item-grid__image">
-        <picture>
-          <source srcset="/img/items/item-01.jpg">
-          <img src="/img/items/item-01.jpg" alt="">
-        </picture>
-      </div>
-      <div class="item-grid__details">
-        <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
-        <div class="item-grid__price"><span>$</span>43.99</div>
-        <ul class="item-grid__tags">
-          <li><a href="">STAR WARS</a></li>
-          <li><a href="">KITCHEN</a></li>
-          <li><a href="">NEW</a></li>
-        </ul>
-        <div class="item-grid__more-details"><a href="">Product Details</a></div>
-        <a href="" class="item-grid__button">BUY NOW</a>
-      </div>
-    </li>
-  `;
-}).join('');
+// ********** HOMEPAGE **********
 
-const gridContainer = document.querySelector('.item-grid__list');
-gridContainer.innerHTML = gridItems;
+if (path === 'home') {
+  const gridItems = grid.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <picture>
+            <source srcset="/img/items/item-01.jpg">
+            <img src="/img/items/item-01.jpg" alt="">
+          </picture>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>43.99</div>
+          <ul class="item-grid__tags">
+            <li><a href="">STAR WARS</a></li>
+            <li><a href="">KITCHEN</a></li>
+            <li><a href="">NEW</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = gridItems;
+}
 
 // ------------------------------------------------------------
 
-// TODO: make this secure...?? 😬
-const searchQuery = new URLSearchParams(window.location.search).get('search').toLowerCase();
+// ********** SEARCH RESULTS **********
 
-const searchResults = grid.filter((item) => {
-  return item.title.toLowerCase().includes(searchQuery);
-});
+if (path === 'search-results') {
+  // TODO: make this secure...?? 😬
+  const searchQuery = new URLSearchParams(window.location.search).get('search').toLowerCase();
 
-console.log('searchResults: ', searchResults);
+  const searchResults = grid.filter((item) => {
+    return item.title.toLowerCase().includes(searchQuery);
+  });
+
+  const searchResultItems = searchResults.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <picture>
+            <source srcset="/img/items/item-01.jpg">
+            <img src="/img/items/item-01.jpg" alt="">
+          </picture>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>43.99</div>
+          <ul class="item-grid__tags">
+            <li><a href="">STAR WARS</a></li>
+            <li><a href="">KITCHEN</a></li>
+            <li><a href="">NEW</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = searchResultItems;
+}
+
+// ------------------------------------------------------------
+
+// ********** CATEGORY **********
+
+if (path === 'category') {
+  // TODO: make this secure...?? 😬
+  const catId = new URLSearchParams(window.location.search).get('id');
+
+  const categoryResults = grid.filter((item) => {
+    return item.category === parseInt(catId);
+  });
+
+  const categoryResultItems = categoryResults.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <picture>
+            <source srcset="/img/items/item-01.jpg">
+            <img src="/img/items/item-01.jpg" alt="">
+          </picture>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>43.99</div>
+          <ul class="item-grid__tags">
+            <li><a href="">STAR WARS</a></li>
+            <li><a href="">KITCHEN</a></li>
+            <li><a href="">NEW</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = categoryResultItems;
+}
+
+// ------------------------------------------------------------
+
+// ********** MOVIE **********
+
+if (path === 'movie') {
+  // TODO: make this secure...?? 😬
+  const movieId = new URLSearchParams(window.location.search).get('id');
+
+  const movieResults = grid.filter((item) => {
+    return item.movie === parseInt(movieId);
+  });
+
+  const movieResultItems = movieResults.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <picture>
+            <source srcset="/img/items/item-01.jpg">
+            <img src="/img/items/item-01.jpg" alt="">
+          </picture>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>43.99</div>
+          <ul class="item-grid__tags">
+            <li><a href="">STAR WARS</a></li>
+            <li><a href="">KITCHEN</a></li>
+            <li><a href="">NEW</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = movieResultItems;
+}
