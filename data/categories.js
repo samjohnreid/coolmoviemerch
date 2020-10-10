@@ -14,5 +14,17 @@ export default [
   {
     id: 4,
     title: 'LEGO'
+  },
+  {
+    id: 5,
+    title: 'Figurines'
+  },
+  {
+    id: 6,
+    title: 'Christmas'
+  },
+  {
+    id: 7,
+    title: 'Kids'
   }
 ];
