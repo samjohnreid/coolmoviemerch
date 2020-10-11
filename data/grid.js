@@ -130,5 +130,71 @@ export default [
     license: 2,
     featured: false,
     img: 'enesco-disney-traditions-by-jim-shore-lion-king-simba-and-mufasa-fathers-pride-figurine'
+  },
+  {
+    id: 13,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 6,
+    category: 5,
+    license: 2,
+    featured: false,
+    img: 'XXXXXX'
+  },
+  {
+    id: 14,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 0,
+    category: 0,
+    license: 0,
+    featured: false,
+    img: 'XXXXXX'
+  },
+  {
+    id: 15,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 0,
+    category: 0,
+    license: 0,
+    featured: false,
+    img: 'XXXXXX'
+  },
+  {
+    id: 16,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 0,
+    category: 0,
+    license: 0,
+    featured: false,
+    img: 'XXXXXX'
+  },
+  {
+    id: 17,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 0,
+    category: 0,
+    license: 0,
+    featured: false,
+    img: 'XXXXXX'
+  },
+  {
+    id: 18,
+    title: `XXXXXXXX`,
+    price: XXX,
+    url: 'XXXXX',
+    movie: 0,
+    category: 0,
+    license: 0,
+    featured: false,
+    img: 'XXXXXX'
   }
 ];

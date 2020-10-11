@@ -6,5 +6,9 @@ export default [
   {
     id: 2,
     license: 'Disney'
+  },
+  {
+    id: 3,
+    license: 'Star Wars'
   }
 ];
