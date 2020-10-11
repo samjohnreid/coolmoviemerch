@@ -196,5 +196,137 @@ export default [
     license: 3,
     featured: false,
     img: 'star-wars-periodic-table-of-elements-graphic-t-shirt'
+  },
+  {
+    id: 19,
+    title: `Jurassic Park Dinosaur Backpack`,
+    price: 34.99,
+    url: 'https://amzn.to/34KX4yF',
+    movie: 8,
+    category: 3,
+    license: 4,
+    featured: false,
+    img: 'jurassic-park-dinosaur-backpack'
+  },
+  {
+    id: 20,
+    title: `Ravensburger Jurassic Park Danger! Adventure Strategy Game for Kids & Adults`,
+    price: 16.99,
+    url: 'https://amzn.to/2GNLs5V',
+    movie: 8,
+    category: 2,
+    license: 4,
+    featured: false,
+    img: 'ravensburger-jurassic-park-danger-adventure-strategy-game'
+  },
+  {
+    id: 21,
+    title: `Bioworld Jurassic Park Sleep Pants`,
+    price: 21.98,
+    url: 'https://amzn.to/3k1V8bi',
+    movie: 8,
+    category: 9,
+    license: 4,
+    featured: false,
+    img: 'bioworld-jurassic-park-sleep-pants'
+  },
+  {
+    id: 22,
+    title: `Jurassic World Kerplunk! Raptors`,
+    price: 34.99,
+    url: 'https://amzn.to/3dmpMK3',
+    movie: 9,
+    category: 2,
+    license: 4,
+    featured: false,
+    img: 'jurassic-world-kerplunk-raptors'
+  },
+  {
+    id: 23,
+    title: `UNO Jurassic World`,
+    price: 5.44,
+    url: 'https://amzn.to/30UXW2q',
+    movie: 9,
+    category: 2,
+    license: 4,
+    featured: false,
+    img: 'uno-jurassic-world'
+  },
+  {
+    id: 24,
+    title: `Jurassic Park Mosquito in Amber Resin Official Prop Replica Paper Weight`,
+    price: 27.99,
+    url: 'https://amzn.to/33Nyuhb',
+    movie: 8,
+    category: 10,
+    license: 4,
+    featured: false,
+    img: 'jurassic-park-mosquito-in-amber-resin-official-prop-replica-paper-weight'
+  },
+  {
+    id: 25,
+    title: `Marvel Thor Superhero Figurine Christmas Tree Ornament`,
+    price: 19.99,
+    url: 'https://amzn.to/3lDo3mO',
+    movie: 10,
+    category: 6,
+    license: 5,
+    featured: false,
+    img: 'marvel-thor-superhero-figurine-christmas-tree-ornament'
+  },
+  {
+    id: 26,
+    title: `Geek & Glitter Marvel Captain America Cufflink Set with Gift Box`,
+    price: 24.99,
+    url: 'https://amzn.to/3nDBJji',
+    movie: 11,
+    category: 3,
+    license: 5,
+    featured: false,
+    img: 'geek-and-glitter-marvel-captain-america-cufflink-set-with-gift-box'
+  },
+  {
+    id: 27,
+    title: `Marvel Tony Stark Sunglasses Vintage Square Metal Frame Eyeglasses Spider-Man`,
+    price: 14.99,
+    url: 'https://amzn.to/34JuOfX',
+    movie: 12,
+    category: 3,
+    license: 5,
+    featured: false,
+    img: 'marvel-tony-stark-sunglasses-vintage-square-metal-frame-eyeglasses-spider-man'
+  },
+  {
+    id: 28,
+    title: `Marvel Legends Series Infinity Gauntlet Articulated Electronic Fist`,
+    price: 98.16,
+    url: 'https://amzn.to/34Lvz8j',
+    movie: 13,
+    category: 8,
+    license: 5,
+    featured: false,
+    img: 'marvel-legends-series-infinity-gauntlet-articulated-electronic-fist'
+  },
+  {
+    id: 29,
+    title: `Geek & Glitter Marvel Iron-Man Cufflink Set with Gift Box`,
+    price: 24.99,
+    url: 'https://amzn.to/34Pq882',
+    movie: 14,
+    category: 3,
+    license: 5,
+    featured: false,
+    img: 'geek-and-glitter-marvel-iron-man-cufflink-set-with-gift-box'
+  },
+  {
+    id: 30,
+    title: `Marvel Legends Series Captain America Shield`,
+    price: 195.35,
+    url: 'https://amzn.to/3nEVgjr',
+    movie: 11,
+    category: 8,
+    license: 5,
+    featured: false,
+    img: 'marvel-legends-series-captain-america-shield'
   }
 ];

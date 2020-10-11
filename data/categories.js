@@ -5,7 +5,7 @@ export default [
   },
   {
     id: 2,
-    title: 'Board Games'
+    title: 'Games'
   },
   {
     id: 3,
@@ -34,5 +34,9 @@ export default [
   {
     id: 9,
     title: 'Apparel'
+  },
+  {
+    id: 10,
+    title: 'Home Office'
   }
 ];
