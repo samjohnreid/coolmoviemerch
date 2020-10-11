@@ -34,5 +34,11 @@ export default [
     title: 'The Lion King',
     year: 1994,
     director: 'Rob Minkoff, Roger Allers'
+  },
+  {
+    id: 7,
+    title: 'Star Wars',
+    year: 1977,
+    director: 'George Lucas'
   }
 ];

@@ -26,5 +26,13 @@ export default [
   {
     id: 7,
     title: 'Kids'
+  },
+  {
+    id: 8,
+    title: 'Toys & Gadgets'
+  },
+  {
+    id: 9,
+    title: 'Apparel'
   }
 ];
