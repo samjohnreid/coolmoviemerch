@@ -82,5 +82,41 @@ export default [
     title: 'Iron Man',
     year: 2008,
     director: 'Jon Favreau'
+  },
+  {
+    id: 15,
+    title: 'Deadpool',
+    year: 2016,
+    director: 'Tim Miller'
+  },
+  {
+    id: 16,
+    title: 'James Bond',
+    year: 1962,
+    director: 'Terence Young'
+  },
+  {
+    id: 17,
+    title: 'The Mandalorian',
+    year: 2019,
+    director: 'Jon Favreau'
+  },
+  {
+    id: 18,
+    title: 'Back to the Future',
+    year: 1985,
+    director: 'Robert Zemeckis'
+  },
+  {
+    id: 19,
+    title: 'Indiana Jones',
+    year: 1981,
+    director: 'Steven Spielberg'
+  },
+  {
+    id: 20,
+    title: 'The Fifth Element',
+    year: 1997,
+    director: 'Luc Besson'
   }
 ];

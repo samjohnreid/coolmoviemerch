@@ -38,5 +38,13 @@ export default [
   {
     id: 10,
     title: 'Home Office'
+  },
+  {
+    id: 11,
+    title: 'Face Masks'
+  },
+  {
+    id: 12,
+    title: 'Collectibles & Cosplay'
   }
 ];
