@@ -46,5 +46,9 @@ export default [
   {
     id: 12,
     title: 'Collectibles & Cosplay'
+  },
+  {
+    id: 13,
+    title: 'Posters & Prints'
   }
 ];

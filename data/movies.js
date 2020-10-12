@@ -1,122 +1,140 @@
 export default [
   {
     id: 1,
-    title: 'Harry Potter',
+    title: `Harry Potter`,
     year: 2001,
-    director: 'Chris Columbus'
+    director: `Chris Columbus`
   },
   {
     id: 2,
-    title: 'Beauty and the Beast',
+    title: `Beauty and the Beast`,
     year: 1991,
-    director: 'Gary Trousdale, Kirk Wise'
+    director: `Gary Trousdale, Kirk Wise`
   },
   {
     id: 3,
-    title: 'Beauty and the Beast',
+    title: `Beauty and the Beast`,
     year: 1991,
-    director: 'Gary Trousdale, Kirk Wise'
+    director: `Gary Trousdale, Kirk Wise`
   },
   {
     id: 4,
-    title: 'Aladdin',
+    title: `Aladdin`,
     year: 1992,
-    director: 'Ron Clements, John Musker'
+    director: `Ron Clements, John Musker`
   },
   {
     id: 5,
-    title: 'Mulan',
+    title: `Mulan`,
     year: 1998,
-    director: 'Tony Bancroft, Barry Cook'
+    director: `Tony Bancroft, Barry Cook`
   },
   {
     id: 6,
-    title: 'The Lion King',
+    title: `The Lion King`,
     year: 1994,
-    director: 'Rob Minkoff, Roger Allers'
+    director: `Rob Minkoff, Roger Allers`
   },
   {
     id: 7,
-    title: 'Star Wars',
+    title: `Star Wars`,
     year: 1977,
-    director: 'George Lucas'
+    director: `George Lucas`
   },
   {
     id: 8,
-    title: 'Jurassic Park',
+    title: `Jurassic Park`,
     year: 1993,
-    director: 'Steven Spielberg'
+    director: `Steven Spielberg`
   },
   {
     id: 9,
-    title: 'Jurassic World',
+    title: `Jurassic World`,
     year: 2015,
-    director: 'Colin Trevorrow'
+    director: `Colin Trevorrow`
   },
   {
     id: 10,
-    title: 'Thor',
+    title: `Thor`,
     year: 2011,
-    director: 'Kenneth Branagh'
+    director: `Kenneth Branagh`
   },
   {
     id: 11,
-    title: 'Captain America',
+    title: `Captain America`,
     year: 2011,
-    director: 'Joe Johnston'
+    director: `Joe Johnston`
   },
   {
     id: 12,
-    title: 'Spider-Man',
+    title: `Spider-Man`,
     year: 2017,
-    director: 'Jon Watts'
+    director: `Jon Watts`
   },
   {
     id: 13,
-    title: 'Avengers',
+    title: `Avengers`,
     year: 2018,
-    director: 'Joe Russo, Anthony Russo'
+    director: `Joe Russo, Anthony Russo`
   },
   {
     id: 14,
-    title: 'Iron Man',
+    title: `Iron Man`,
     year: 2008,
-    director: 'Jon Favreau'
+    director: `Jon Favreau`
   },
   {
     id: 15,
-    title: 'Deadpool',
+    title: `Deadpool`,
     year: 2016,
-    director: 'Tim Miller'
+    director: `Tim Miller`
   },
   {
     id: 16,
-    title: 'James Bond',
+    title: `James Bond`,
     year: 1962,
-    director: 'Terence Young'
+    director: `Terence Young`
   },
   {
     id: 17,
-    title: 'The Mandalorian',
+    title: `The Mandalorian`,
     year: 2019,
-    director: 'Jon Favreau'
+    director: `Jon Favreau`
   },
   {
     id: 18,
-    title: 'Back to the Future',
+    title: `Back to the Future`,
     year: 1985,
-    director: 'Robert Zemeckis'
+    director: `Robert Zemeckis`
   },
   {
     id: 19,
-    title: 'Indiana Jones',
+    title: `Indiana Jones`,
     year: 1981,
-    director: 'Steven Spielberg'
+    director: `Steven Spielberg`
   },
   {
     id: 20,
-    title: 'The Fifth Element',
+    title: `The Fifth Element`,
     year: 1997,
-    director: 'Luc Besson'
+    director: `Luc Besson`
+  },
+  {
+    id: 21,
+    title: `The Simpsons`,
+    year: 2007,
+    director: `David Silverman`
+  },
+  {
+    id: 22,
+    title: `Star Trek`,
+    year: 1979,
+    director: `Robert Wise`
+  },
+  {
+    id: 23,
+    title: `Batman`,
+    year: 1989,
+    director: `Tim Burton`
   }
 ];
