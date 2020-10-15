@@ -136,5 +136,41 @@ export default [
     title: `Batman`,
     year: 1989,
     director: `Tim Burton`
-  }
+  },
+  {
+    id: 24,
+    title: `Pokémon`,
+    year: 1998,
+    director: `Kunihiko Yuyama`
+  },
+  {
+    id: 25,
+    title: `Ghostbusters`,
+    year: 1984,
+    director: `Ivan Reitman`
+  },
+  {
+    id: 26,
+    title: `Coco`,
+    year: 2017,
+    director: `Adrian Molina, Lee Unkrich`
+  },
+  {
+    id: 27,
+    title: `Toy Story`,
+    year: 1995,
+    director: `John Lasseter`
+  },
+  {
+    id: 28,
+    title: `The Incredibles`,
+    year: 2004,
+    director: `Brad Bird`
+  },
+  {
+    id: 29,
+    title: `Gremlins`,
+    year: 1984,
+    director: `Joe Dante`
+  },
 ];
