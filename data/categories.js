@@ -45,10 +45,14 @@ export default [
   },
   {
     id: 12,
-    title: 'Collectibles & Cosplay'
+    title: 'Collectibles'
   },
   {
     id: 13,
     title: 'Posters & Prints'
+  },
+  {
+    id: 14,
+    title: 'Cosplay'
   }
 ];

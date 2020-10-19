@@ -45,7 +45,7 @@ export default [
     price: 35.27,
     url: 'https://amzn.to/3jSHLdN',
     movie: 20,
-    category: 12,
+    category: 14,
     license: null,
     img: 'fifth-element-cosplay-futuristic-strappy-stretchy-costume-bodysuit-with-cutouts'
   },

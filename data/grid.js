@@ -665,7 +665,7 @@ export default [
     price: 10.14,
     url: 'https://amzn.to/3jSMXxX',
     movie: 19,
-    category: 12,
+    category: 14,
     license: 10,
     featured: false,
     img: 'rubies-indiana-jones-leather-whip'
@@ -676,7 +676,7 @@ export default [
     price: 9.79,
     url: 'https://amzn.to/36XlhEL',
     movie: 19,
-    category: 12,
+    category: 14,
     license: 10,
     featured: false,
     img: 'rubies-mens-indiana-jones-costume-hat'
@@ -687,7 +687,7 @@ export default [
     price: 35.27,
     url: 'https://amzn.to/3jSHLdN',
     movie: 20,
-    category: 12,
+    category: 14,
     license: null,
     featured: false,
     img: 'fifth-element-cosplay-futuristic-strappy-stretchy-costume-bodysuit-with-cutouts'
@@ -896,7 +896,7 @@ export default [
     price: 26.22,
     url: 'https://amzn.to/3lEOCaX',
     movie: 23,
-    category: 12,
+    category: 14,
     license: 13,
     featured: false,
     img: 'rubies-arkham-city-deluxe-batman-gloves-black'
@@ -1017,7 +1017,7 @@ export default [
     price: 27.95,
     url: 'https://amzn.to/3nU47hp',
     movie: 25,
-    category: 12,
+    category: 14,
     license: 15,
     featured: false,
     img: 'ghostbusters-original-officially-licensed-costume-one-piece-union-suit-cosplay-sleepwear-pajama'
@@ -1039,7 +1039,7 @@ export default [
     price: 69.99,
     url: 'https://amzn.to/3dv8Gtq',
     movie: 25,
-    category: 12,
+    category: 14,
     license: 15,
     featured: false,
     img: 'spirit-halloween-ghostbusters-deluxe-replica-proton-pack-officially-licensed'
