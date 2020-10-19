@@ -112,6 +112,8 @@ table {
       font-weight: bold;
       height: 35px;
       padding: 0 0 2px 20px; }
+      .masthead__search input:focus:not(:focus-visible) {
+        outline: 0; }
       .masthead__search input::placeholder {
         color: var(--color-gray-lighter); }
     .masthead__search button {
@@ -386,6 +388,8 @@ table {
         .hero__product::after {
           border: none; } }
   .hero__image {
+    align-items: flex-end;
+    display: flex;
     margin-bottom: 0;
     position: relative; }
     @media only screen and (min-width: 768px) {
@@ -405,14 +409,13 @@ table {
           content: none; } }
     .hero__image img {
       margin: 4px auto 0 auto;
-      max-width: 50%; }
+      max-width: 100%; }
       @media only screen and (min-width: 768px) {
         .hero__image img {
-          max-width: 70%; } }
+          max-width: 100%; } }
       @media only screen and (min-width: 1200px) {
         .hero__image img {
-          margin: 0;
-          max-width: 100%; } }
+          margin: 0; } }
   .hero__details {
     background: var(--color-gray-lightest);
     border-radius: 0 0 45px 45px;
@@ -474,6 +477,8 @@ table {
       height: 100px;
       padding: 0;
       width: 100px; }
+      .hero__nav button:focus:not(:focus-visible) {
+        outline: 0; }
     .hero__nav img {
       width: 100%; }
 

@@ -92,6 +92,8 @@
   }
 
   &__image {
+    align-items: flex-end;
+    display: flex;
     margin-bottom: 0;
     position: relative;
 
@@ -117,15 +119,14 @@
 
     img {
       margin: 4px auto 0 auto;
-      max-width: 50%;
+      max-width: 100%;
 
       @include tablet {
-        max-width: 70%;
+        max-width: 100%;
       }
       
       @include desktop {
         margin: 0;
-        max-width: 100%;
       }
     }
   }
@@ -213,6 +214,10 @@
       height: 100px;
       padding: 0;
       width: 100px;
+
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
     }
 
     img {

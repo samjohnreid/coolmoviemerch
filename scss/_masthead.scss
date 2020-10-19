@@ -70,6 +70,10 @@
       height: 35px;
       padding: 0 0 2px 20px;
 
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
+
       &::placeholder {
         color: var(--color-gray-lighter);
       }

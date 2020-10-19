@@ -63,8 +63,8 @@ const heroNavItems = heroes.map((hero) => {
     <li>
       <button>
         <picture>
-          <source srcset="/img/items/hero/thumbnails/${hero.img}.jpg">
-          <img src="/img/items/hero/thumbnails/${hero.img}.jpg" alt="">
+          <source srcset="/img/items/hero/thumb/${hero.img}.jpg">
+          <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
         </picture>
       </button>
     </li>
