@@ -147,6 +147,10 @@
         padding: 0 0 2px 80px;
       }
 
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
+
       &::placeholder {
         color: var(--color-gray-lighter);
       }

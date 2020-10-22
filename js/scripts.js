@@ -2,6 +2,7 @@ import movies from '../data/movies.js';
 import categories from '../data/categories.js';
 import heroes from '../data/heroes.js';
 import grid from '../data/grid.js';
+import quotes from '../data/quotes.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
@@ -23,6 +24,18 @@ document.addEventListener('click', (event) => {
   if (!event.target.matches('.masthead__hamburger')) return;
   toggleMenu();
 });
+
+
+// ------------------------------------------------------------
+
+
+// Movie quotes for search placeholder
+
+const searchBar = document.querySelector('.masthead__search');
+
+const movieQuotes = quotes;
+
+searchBar.dataset.movieQuotePlaceholder = movieQuotes[Math.floor(Math.random() * movieQuotes.length)];
 
 
 // ------------------------------------------------------------
