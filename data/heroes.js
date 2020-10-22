@@ -22,7 +22,7 @@ export default [
   {
     id: 3,
     title: `Star Wars Darth Vader Apron, Adjustable Adult Size Fits Most`,
-    price: 29.99,
+    price: 14.99,
     url: 'https://amzn.to/35fnKaY',
     movie: 7,
     category: 1,
