@@ -54,6 +54,7 @@ const getCategory = (id) => {
 
 // ------------------------------------------------------------
 
+
 const activateFirstSlide = slideNum => slideNum === 0 && 'hero__product--active';
 
 const heroItems = heroes.map((hero, index) => {

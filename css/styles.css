@@ -118,6 +118,8 @@ table {
         top: 11px;
         white-space: nowrap;
         width: calc(100% - 57px); } }
+    .masthead__search:focus-within::after {
+      font-size: 0; }
     .masthead__search input {
       border: none;
       border-radius: 37px 0 0 37px;
