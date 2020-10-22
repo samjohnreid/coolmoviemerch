@@ -8,18 +8,25 @@ const path = appContainer.dataset.path;
 
 const gridContainer = document.querySelector('.item-grid__list');
 
+
 // ------------------------------------------------------------
 
+
 // Mobile nav menu
-// TODO: use event delegation for event listeners ???
-const hamburger = document.querySelector('.masthead__hamburger');
+
 const navMenu = document.querySelector('.masthead__nav');
 const toggleMenu = () => {
   navMenu.classList.toggle('masthead__nav--active');
 }
-hamburger.addEventListener('click', toggleMenu);
+
+document.addEventListener('click', (event) => {
+  if (!event.target.matches('.masthead__hamburger')) return;
+  toggleMenu();
+});
+
 
 // ------------------------------------------------------------
+
 
 const getMovie = (id) => {
   const getEl = movies.find(el => el.id === id);
@@ -31,11 +38,14 @@ const getCategory = (id) => {
   return getEl.title;
 }
 
+
 // ------------------------------------------------------------
 
-const heroItems = heroes.map((hero) => {
+const activateFirstSlide = slideNum => slideNum === 0 && 'hero__product--active';
+
+const heroItems = heroes.map((hero, index) => {
   return `
-    <li class="hero__product">
+    <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
       <div class="hero__image">
         <picture>
           <source srcset="/img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
@@ -58,10 +68,10 @@ const heroItems = heroes.map((hero) => {
   `;
 }).join('');
 
-const heroNavItems = heroes.map((hero) => {
+const heroNavItems = heroes.map((hero, index) => {
   return `
     <li>
-      <button>
+      <button data-hero-nav-item="${index+1}">
         <picture>
           <source srcset="/img/items/hero/thumb/${hero.img}.jpg">
           <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
@@ -79,7 +89,25 @@ if (heroContainer) {
   heroNavContainer.innerHTML = heroNavItems;
 }
 
+// Hero navigation
+
+const heroSlides = document.querySelectorAll('.hero__product');
+
+const heroNav = (target) => {
+  heroSlides.forEach((slide) => {
+    slide.classList.remove('hero__product--active');
+    slide.dataset.heroItem === target && slide.classList.add('hero__product--active');
+  });
+}
+
+document.addEventListener('click', (e) => {
+  if (!e.target.matches('.hero__nav li button')) return;
+  heroNav(e.target.dataset.heroNavItem);
+});
+
+
 // ------------------------------------------------------------
+
 
 // ********** HOMEPAGE **********
 
@@ -112,7 +140,9 @@ if (path === 'home') {
   gridContainer.innerHTML = gridItems;
 }
 
+
 // ------------------------------------------------------------
+
 
 // ********** SEARCH RESULTS **********
 
@@ -152,7 +182,9 @@ if (path === 'search-results') {
   gridContainer.innerHTML = searchResultItems;
 }
 
+
 // ------------------------------------------------------------
+
 
 // ********** CATEGORY **********
 
@@ -192,7 +224,9 @@ if (path === 'category') {
   gridContainer.innerHTML = categoryResultItems;
 }
 
+
 // ------------------------------------------------------------
+
 
 // ********** MOVIE **********
 

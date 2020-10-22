@@ -57,7 +57,7 @@
       margin-right: unset;
       max-width: unset;
 
-      &:first-child {
+      &.hero__product--active {
         display: flex;
       }
     }
@@ -72,6 +72,10 @@
 
     &:last-child {
       border-right: 15px solid transparent;
+
+      @include tablet {
+        border-right: none;
+      }
     }
 
     &::after {
@@ -217,6 +221,10 @@
 
       &:focus:not(:focus-visible) {
         outline: 0;
+      }
+
+      & > * {
+        pointer-events: none;
       }
     }
 
