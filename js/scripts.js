@@ -286,3 +286,25 @@ if (path === 'movie') {
 
   gridContainer.innerHTML = movieResultItems;
 }
+
+
+// ------------------------------------------------------------
+
+
+// ********** SUBHEAD **********
+
+if (path !== 'home') {
+  
+  const subheadContainer = document.querySelector('.subhead');
+  
+  const catId = new URLSearchParams(window.location.search).get('id');
+  
+  const getTitle = (id) => {
+    const getEl = categories.find(el => el.id === id);
+    return getEl.title;
+  }
+
+  const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(catId))}</h1>`;
+
+  subheadContainer.innerHTML = subheadTitle;
+}
