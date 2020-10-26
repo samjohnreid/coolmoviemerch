@@ -1,5 +1,6 @@
 import movies from '../data/movies.js';
 import categories from '../data/categories.js';
+import licenses from '../data/licenses.js';
 import heroes from '../data/heroes.js';
 import grid from '../data/grid.js';
 import quotes from '../data/quotes.js';
@@ -48,9 +49,12 @@ searchField.addEventListener('blur', (e) => {
 // ------------------------------------------------------------
 
 
-const getMovie = (id) => {
-  const getEl = movies.find(el => el.id === id);
-  return getEl.title;
+const getMovieOrLicense = (movieId, licenseId) => {
+  const listingType = movieId ? movies : licenses;
+  const listingId = movieId ? movieId : licenseId;
+  const listingPath = movieId ? 'movie' : 'license';
+  const getEl = listingType.find(el => el.id === listingId);
+  return `<a href="/${listingPath}/?id=${getEl.id}">${getEl.title}</a>`;
 }
 
 const getCategory = (id) => {
@@ -61,6 +65,8 @@ const getCategory = (id) => {
 
 // ------------------------------------------------------------
 
+
+// ********** HERO **********
 
 const activateFirstSlide = slideNum => slideNum === 0 && 'hero__product--active';
 
@@ -79,7 +85,7 @@ const heroItems = heroes.map((hero, index) => {
         <h2 class="hero__title"><a href="${hero.url}">${hero.title}</a></h2>
         <div class="hero__price"><span>$</span>${hero.price}</div>
         <ul class="hero__tags">
-          <li><a href="/movie/?id=${hero.movie}">${getMovie(hero.movie)}</a></li>
+          <li>${getMovieOrLicense(hero.movie, hero.license)}</li>
           <li><a href="/category/?id=${hero.category}">${getCategory(hero.category)}</a></li>
         </ul>
         <div class="hero__more-details"><a href="">Product Details</a></div>
@@ -148,7 +154,7 @@ if (path === 'home') {
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
@@ -190,7 +196,7 @@ if (path === 'search-results') {
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
@@ -232,7 +238,7 @@ if (path === 'category') {
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
@@ -274,7 +280,7 @@ if (path === 'movie') {
           <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
-            <li><a href="/movie/?id=${item.movie}">${getMovie(item.movie)}</a></li>
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
           <div class="item-grid__more-details"><a href="">Product Details</a></div>
@@ -287,6 +293,47 @@ if (path === 'movie') {
   gridContainer.innerHTML = movieResultItems;
 }
 
+// ------------------------------------------------------------
+
+
+// ********** LICENSE **********
+
+if (path === 'license') {
+  // TODO: make this secure...?? 😬
+  const licenseId = new URLSearchParams(window.location.search).get('id');
+
+  const licenseResults = grid.filter((item) => {
+    return item.license === parseInt(licenseId);
+  });
+
+  const licenseResultItems = licenseResults.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <ul class="item-grid__tags">
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = licenseResultItems;
+}
+
 
 // ------------------------------------------------------------
 
@@ -297,14 +344,20 @@ if (path !== 'home') {
   
   const subheadContainer = document.querySelector('.subhead');
   
-  const catId = new URLSearchParams(window.location.search).get('id');
+  const pageId = new URLSearchParams(window.location.search).get('id');
+  
+  const titleMap = new Map([
+    ['category', categories],
+    ['movie', movies],
+    ['license', licenses]
+  ]);
   
   const getTitle = (id) => {
-    const getEl = categories.find(el => el.id === id);
+    const getEl = titleMap.get(path).find(el => el.id === id);
     return getEl.title;
   }
 
-  const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(catId))}</h1>`;
+  const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(pageId))}</h1>`;
 
   subheadContainer.innerHTML = subheadTitle;
 }

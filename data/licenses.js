@@ -1,78 +1,78 @@
 export default [
   {
     id: 1,
-    license: `Harry Potter`
+    title: `Harry Potter`
   },
   {
     id: 2,
-    license: `Disney`
+    title: `Disney`
   },
   {
     id: 3,
-    license: `Star Wars`
+    title: `Star Wars`
   },
   {
     id: 4,
-    license: `Jurassic Park`
+    title: `Jurassic Park`
   },
   {
     id: 5,
-    license: `Marvel`
+    title: `Marvel`
   },
   {
     id: 6,
-    license: `Deadpool`
+    title: `Deadpool`
   },
   {
     id: 7,
-    license: `James Bond 007`
+    title: `James Bond 007`
   },
   {
     id: 8,
-    license: `The Mandalorian`
+    title: `The Mandalorian`
   },
   {
     id: 9,
-    license: `Back to the Future`
+    title: `Back to the Future`
   },
   {
     id: 10,
-    license: `Indiana Jones`
+    title: `Indiana Jones`
   },
   {
     id: 11,
-    license: `The Simpsons`
+    title: `The Simpsons`
   },
   {
     id: 12,
-    license: `Star Trek`
+    title: `Star Trek`
   },
   {
     id: 13,
-    license: `Batman`
+    title: `Batman`
   },
   {
     id: 14,
-    license: `Pokémon`
+    title: `Pokémon`
   },
   {
     id: 15,
-    license: `Ghostbusters`
+    title: `Ghostbusters`
   },
   {
     id: 16,
-    license: `Pixar`
+    title: `Pixar`
   },
   {
     id: 17,
-    license: `DC Comics`
+    title: `DC Comics`
   },
   {
     id: 18,
-    license: `Gremlins`
+    title: `Gremlins`
   },
   {
     id: 19,
-    license: `TNMT`
+    title: `TNMT`
   }
 ];

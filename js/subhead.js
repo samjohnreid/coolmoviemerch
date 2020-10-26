@@ -1,5 +1,3 @@
 export default `
-  <section class="subhead">
-    
-  </section>
+  <section class="subhead"></section>
 `;
