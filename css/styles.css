@@ -304,6 +304,10 @@ table {
   .hero__price span,
   .item-grid__price span {
     margin-right: 1px; }
+  .hero__price a,
+  .item-grid__price a {
+    color: inherit;
+    text-decoration: none; }
 
 .hero__tags,
 .item-grid__tags {

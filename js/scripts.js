@@ -151,7 +151,7 @@ if (path === 'home') {
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
@@ -193,7 +193,7 @@ if (path === 'search-results') {
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
@@ -215,7 +215,7 @@ if (path === 'search-results') {
 
 // ********** CATEGORY **********
 
-if (path === 'category') {
+if (path === 'category' && window.location.search) {
   // TODO: make this secure...?? 😬
   const catId = new URLSearchParams(window.location.search).get('id');
 
@@ -235,7 +235,7 @@ if (path === 'category') {
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
@@ -277,7 +277,7 @@ if (path === 'movie') {
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
@@ -318,7 +318,7 @@ if (path === 'license') {
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
@@ -349,10 +349,17 @@ if (path !== 'home') {
   const titleMap = new Map([
     ['category', categories],
     ['movie', movies],
-    ['license', licenses]
+    ['license', licenses],
   ]);
   
   const getTitle = (id) => {
+    if (!pageId) {
+      switch (path) {
+        case 'category': return 'Categories';
+        case 'movie': return 'Movies';
+        case 'license': return 'Licenses';
+      }
+    }
     const getEl = titleMap.get(path).find(el => el.id === id);
     return getEl.title;
   }
@@ -360,4 +367,36 @@ if (path !== 'home') {
   const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(pageId))}</h1>`;
 
   subheadContainer.innerHTML = subheadTitle;
+}
+
+
+// ------------------------------------------------------------
+
+
+// ********** CATEGORIES NAVIGATION **********
+
+if (path === 'category' && !window.location.search) {  
+  const categoryNavResultsItems = categories.map((item) => {
+    const itemCount = grid.filter(gridItem => gridItem.category === item.id);
+    
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <a href="/category/?id=${item.id}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
+        </div>
+        <div class="item-grid__details">
+          <div class="item-grid__title">${itemCount.length} Items</div>
+          <h2 class="item-grid__price"><a href="/category/?id=${item.id}">${item.title}</a></h2>
+          <a href="/category/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = categoryNavResultsItems;
 }
