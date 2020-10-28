@@ -298,7 +298,7 @@ if (path === 'movie' && window.location.search) {
 
 // ********** LICENSE **********
 
-if (path === 'license') {
+if (path === 'license' && window.location.search) {
   // TODO: make this secure...?? 😬
   const licenseId = new URLSearchParams(window.location.search).get('id');
 
@@ -408,7 +408,6 @@ if (path === 'category' && !window.location.search) {
 // ********** MOVIES NAVIGATION **********
 
 if (path === 'movie' && !window.location.search) {  
-  console.log(movies);
   const movieNavResultItems = movies.map((item) => {
     const itemCount = grid.filter(gridItem => gridItem.movie === item.id);
     
@@ -432,4 +431,36 @@ if (path === 'movie' && !window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = movieNavResultItems;
+}
+
+
+// ------------------------------------------------------------
+
+
+// ********** LICENSES NAVIGATION **********
+
+if (path === 'license' && !window.location.search) {  
+  const licenseNavResultItems = licenses.map((item) => {
+    const itemCount = grid.filter(gridItem => gridItem.license === item.id);
+    
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <a href="/license/?id=${item.id}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
+        </div>
+        <div class="item-grid__details">
+          <div class="item-grid__title">${itemCount.length} Items</div>
+          <h2 class="item-grid__price"><a href="/license/?id=${item.id}">${item.title}</a></h2>
+          <a href="/license/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = licenseNavResultItems;
 }
