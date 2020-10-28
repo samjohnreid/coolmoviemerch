@@ -139,7 +139,11 @@ document.addEventListener('click', (e) => {
 // ********** HOMEPAGE **********
 
 if (path === 'home') {
-  const gridItems = grid.map((item) => {
+  const featuredResults = grid.filter((item) => {
+    return item.featured === true;
+  });
+  
+  const gridItems = featuredResults.map((item) => {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
@@ -358,6 +362,8 @@ if (path !== 'home') {
         case 'category': return 'Categories';
         case 'movie': return 'Movies';
         case 'license': return 'Licenses';
+        case 'under10': return 'Under $10';
+        case 'under20': return 'Under $20';
       }
     }
     const getEl = titleMap.get(path).find(el => el.id === id);
@@ -463,4 +469,44 @@ if (path === 'license' && !window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = licenseNavResultItems;
+}
+
+
+// ------------------------------------------------------------
+
+
+// ********** UNDER $10 & $20 NAVIGATION **********
+
+if (path === 'under10' || path === 'under20') {  
+  const underNResults = grid.filter((item) => {
+    const amount = path === 'under10' ? 10 : 20;
+    return item.price < amount;
+  });
+  
+  const underNResultItems = underNResults.map((item) => {
+    return `
+      <li class="item-grid__item">
+        <div class="item-grid__image">
+          <a href="${item.url}">
+            <picture>
+              <source srcset="/img/items/${item.img}.jpg">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+            </picture>
+          </a>
+        </div>
+        <div class="item-grid__details">
+          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
+          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <ul class="item-grid__tags">
+            <li>${getMovieOrLicense(item.movie, item.license)}</li>
+            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
+          </ul>
+          <div class="item-grid__more-details"><a href="">Product Details</a></div>
+          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
+        </div>
+      </li>
+    `;
+  }).join('');
+
+  gridContainer.innerHTML = underNResultItems;
 }

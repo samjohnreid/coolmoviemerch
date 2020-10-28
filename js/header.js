@@ -14,14 +14,12 @@ export default `
 
     <nav class="masthead__nav">
       <ul class="masthead__nav-list">
-        <li><a href="">Newly Added</a></li>
-        <li class="active"><a href="">Product Type</a></li>
-        <li><a href="">License</a></li>
-        <li><a href="">Company</a></li>
-        <li><a href="">Movie</a></li>
-        <li><a href="">Under $10</a></li>
-        <li><a href="">Under $20</a></li>
-        <li><a href="">Blog</a></li>
+        <li class="active"><a href="/">Featured Products</a></li>
+        <li><a href="/under-10/">Under $10</a></li>
+        <li><a href="/under-20/">Under $20</a></li>
+        <li><a href="/category/">Categories</a></li>
+        <li><a href="/movie/">Movies</a></li>
+        <li><a href="/license/">Licenses</a></li>
       </ul>
     </nav>
 

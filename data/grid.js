@@ -18,7 +18,7 @@ export default [
     movie: 1,
     category: 2,
     license: 1,
-    featured: false,
+    featured: true,
     img: 'harry-potter-wizard-chess-set'
   },
   {
@@ -29,7 +29,7 @@ export default [
     movie: 1,
     category: 3,
     license: 1,
-    featured: false,
+    featured: true,
     img: 'harry-potter-purse-designer-handbag-hogwarts-houses-womens-top-handle-shoulder-satchel-bag'
   },
   {
@@ -95,7 +95,7 @@ export default [
     movie: 4,
     category: 1,
     license: 2,
-    featured: false,
+    featured: true,
     img: 'disney-aladdin-ceramic-sugar-and-creamer-set'
   },
   {
@@ -139,7 +139,7 @@ export default [
     movie: 7,
     category: 1,
     license: 3,
-    featured: false,
+    featured: true,
     img: 'star-wars-death-star-waffle-maker'
   },
   {
@@ -172,7 +172,7 @@ export default [
     movie: 7,
     category: 3,
     license: 3,
-    featured: false,
+    featured: true,
     img: 'star-wars-rebel-officially-licensed-silicone-smartwatch-band-compatible-with-apple-watch'
   },
   {
@@ -194,7 +194,7 @@ export default [
     movie: 7,
     category: 9,
     license: 3,
-    featured: false,
+    featured: true,
     img: 'star-wars-periodic-table-of-elements-graphic-t-shirt'
   },
   {
@@ -216,7 +216,7 @@ export default [
     movie: 8,
     category: 2,
     license: 4,
-    featured: false,
+    featured: true,
     img: 'ravensburger-jurassic-park-danger-adventure-strategy-game'
   },
   {
@@ -227,7 +227,7 @@ export default [
     movie: 8,
     category: 9,
     license: 4,
-    featured: false,
+    featured: true,
     img: 'bioworld-jurassic-park-sleep-pants'
   },
   {
@@ -271,7 +271,7 @@ export default [
     movie: 10,
     category: 6,
     license: 5,
-    featured: false,
+    featured: true,
     img: 'marvel-thor-superhero-figurine-christmas-tree-ornament'
   },
   {
@@ -304,7 +304,7 @@ export default [
     movie: 13,
     category: 8,
     license: 5,
-    featured: false,
+    featured: true,
     img: 'marvel-legends-series-infinity-gauntlet-articulated-electronic-fist'
   },
   {
@@ -315,7 +315,7 @@ export default [
     movie: 14,
     category: 3,
     license: 5,
-    featured: false,
+    featured: true,
     img: 'geek-and-glitter-marvel-iron-man-cufflink-set-with-gift-box'
   },
   {
@@ -326,7 +326,7 @@ export default [
     movie: 11,
     category: 8,
     license: 5,
-    featured: false,
+    featured: true,
     img: 'marvel-legends-series-captain-america-shield'
   },
   {
@@ -337,7 +337,7 @@ export default [
     movie: 15,
     category: 2,
     license: 6,
-    featured: false,
+    featured: true,
     img: 'monopoly-game-marvel-deadpool-edition'
   },
   {
@@ -414,7 +414,7 @@ export default [
     movie: 16,
     category: 1,
     license: 7,
-    featured: false,
+    featured: true,
     img: 'paladone-casino-royale-poker-chip-coasters-officially-licensed-james-bond-007-merchandise'
   },
   {
@@ -447,7 +447,7 @@ export default [
     movie: 16,
     category: 1,
     license: 7,
-    featured: false,
+    featured: true,
     img: 'license-to-grill-bbq-apron-one-size-fits-all-4-utility-pockets-adjustable-neckextra-long-waist-ties'
   },
   {
@@ -469,7 +469,7 @@ export default [
     movie: 17,
     category: 1,
     license: 8,
-    featured: false,
+    featured: true,
     img: 'the-mandalorian-the-child-stand-for-amazon-echo-dot-3rd-gen'
   },
   {
@@ -535,7 +535,7 @@ export default [
     movie: 18,
     category: 12,
     license: 9,
-    featured: false,
+    featured: true,
     img: 'celebrity-machines-back-to-the-future-delorean-outatime-metal-stamped-vanity-prop-license-plate'
   },
   {
@@ -579,7 +579,7 @@ export default [
     movie: 18,
     category: 11,
     license: 9,
-    featured: false,
+    featured: true,
     img: 'back-to-the-future-officially-licensed-delorean-face-mask-with-adjustable-nose-wire'
   },
   {
@@ -645,7 +645,7 @@ export default [
     movie: 19,
     category: 12,
     license: 10,
-    featured: false,
+    featured: true,
     img: 'oem-holy-grail-indiana-jones-and-the-last-crusade-cup-of-christ-chalice-replica-bronze'
   },
   {
@@ -1349,7 +1349,7 @@ export default [
     movie: 3,
     category: 7,
     license: 20,
-    featured: false,
+    featured: true,
     img: 'john-wick-movie-1969-ford-mustang-boss-429-die-cast-vehicle'
   }
 ];
