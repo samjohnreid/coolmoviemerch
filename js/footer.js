@@ -17,29 +17,29 @@ export default `
     <div class="footer__license-grid-wrapper">
       <div class="footer__license-grid">
         <ul class="footer__license-grid-list">
-          <li><a href=""><img src="/img/license-logos/harry-potter.png" alt="Harry Potter"></a></li>
-          <li><a href=""><img src="/img/license-logos/disney.png" alt="Disney"></a></li>
-          <li><a href=""><img src="/img/license-logos/star-wars.png" alt="Star Wars"></a></li>
-          <li><a href=""><img src="/img/license-logos/jurassic-park.png" alt="Jurassic Park"></a></li>
-          <li><a href=""><img src="/img/license-logos/marvel.png" alt="Marvel"></a></li>
-          <li><a href=""><img src="/img/license-logos/deadpool.png" alt="Deadpool"></a></li>
-          <li><a href=""><img src="/img/license-logos/james-bond-007.png" alt="James Bond 007"></a></li>
+          <li><a href="/license/?id=1"><img src="/img/license-logos/harry-potter.png" alt="Harry Potter"></a></li>
+          <li><a href="/license/?id=2"><img src="/img/license-logos/disney.png" alt="Disney"></a></li>
+          <li><a href="/license/?id=3"><img src="/img/license-logos/star-wars.png" alt="Star Wars"></a></li>
+          <li><a href="/license/?id=4"><img src="/img/license-logos/jurassic-park.png" alt="Jurassic Park"></a></li>
+          <li><a href="/license/?id=5"><img src="/img/license-logos/marvel.png" alt="Marvel"></a></li>
+          <li><a href="/license/?id=6"><img src="/img/license-logos/deadpool.png" alt="Deadpool"></a></li>
+          <li><a href="/license/?id=7"><img src="/img/license-logos/james-bond-007.png" alt="James Bond 007"></a></li>
         </ul>
         <ul class="footer__license-grid-list">
-          <li><a href=""><img src="/img/license-logos/the-mandalorian.png" alt="The Mandalorian"></a></li>
-          <li><a href=""><img src="/img/license-logos/back-to-the-future.png" alt="Back to the Future"></a></li>
-          <li><a href=""><img src="/img/license-logos/indiana-jones.png" alt="Indiana Jones"></a></li>
-          <li><a href=""><img src="/img/license-logos/lucasfilm.png" alt="Lucasfilm"></a></li>
-          <li><a href=""><img src="/img/license-logos/star-trek.png" alt="Star Trek"></a></li>
+          <li><a href="/license/?id=8"><img src="/img/license-logos/the-mandalorian.png" alt="The Mandalorian"></a></li>
+          <li><a href="/license/?id=9"><img src="/img/license-logos/back-to-the-future.png" alt="Back to the Future"></a></li>
+          <li><a href="/license/?id=10"><img src="/img/license-logos/indiana-jones.png" alt="Indiana Jones"></a></li>
+          <li><a href="/license/?id=20"><img src="/img/license-logos/john-wick.png" alt="John Wick"></a></li>
+          <li><a href="/license/?id=12"><img src="/img/license-logos/star-trek.png" alt="Star Trek"></a></li>
         </ul>
         <ul class="footer__license-grid-list">
-          <li><a href=""><img src="/img/license-logos/batman.png" alt="Batman"></a></li>
-          <li><a href=""><img src="/img/license-logos/pokemon.png" alt="Pokémon"></a></li>
-          <li><a href=""><img src="/img/license-logos/ghostbusters.png" alt="Ghostbusters"></a></li>
-          <li><a href=""><img src="/img/license-logos/pixar.png" alt="Pixar"></a></li>
-          <li><a href=""><img src="/img/license-logos/dc.png" alt="DC"></a></li>
-          <li><a href=""><img src="/img/license-logos/gremlins.png" alt="Gremlins"></a></li>
-          <li><a href=""><img src="/img/license-logos/teenage-mutant-ninja-turtles.png" alt="Teenage Mutant Ninja Turtles"></a></li>
+          <li><a href="/license/?id=13"><img src="/img/license-logos/batman.png" alt="Batman"></a></li>
+          <li><a href="/license/?id=14"><img src="/img/license-logos/pokemon.png" alt="Pokémon"></a></li>
+          <li><a href="/license/?id=15"><img src="/img/license-logos/ghostbusters.png" alt="Ghostbusters"></a></li>
+          <li><a href="/license/?id=16"><img src="/img/license-logos/pixar.png" alt="Pixar"></a></li>
+          <li><a href="/license/?id=17"><img src="/img/license-logos/dc.png" alt="DC"></a></li>
+          <li><a href="/license/?id=18"><img src="/img/license-logos/gremlins.png" alt="Gremlins"></a></li>
+          <li><a href="/license/?id=19"><img src="/img/license-logos/teenage-mutant-ninja-turtles.png" alt="Teenage Mutant Ninja Turtles"></a></li>
         </ul>
       </div>
     </div>
