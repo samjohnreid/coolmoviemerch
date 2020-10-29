@@ -378,6 +378,7 @@ if (path !== 'home') {
         case 'about': return 'About Cool Movie Merch';
         case 'contact': return 'Contact Cool Movie Merch';
         case 'privacy': return 'Privacy Policy';
+        case 'terms': return 'Terms of Use';
       }
     }
     const getEl = titleMap.get(path).find(el => el.id === id);
@@ -551,12 +552,18 @@ if (aux === 'true') {
     [ contact content here ]
   `;
 
+  const auxContentTerms = `
+    [ terms content here, stuff about price change etc. - hopefully safeguard against litigation! ]
+  `;
+
   if (path === 'about') {
     auxContent = auxContentAbout;
   } else if (path === 'privacy') {
     auxContent = auxContentPrivacy;
   } else if (path === 'contact') {
     auxContent = auxContentContact;
+  } else if (path === 'terms') {
+    auxContent = auxContentTerms;
   }
 
   auxContainer.innerHTML = auxContent;
