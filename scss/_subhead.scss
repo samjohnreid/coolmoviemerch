@@ -22,5 +22,17 @@
     @include desktop {
       font-size: 30px;
     }
+
+    span {
+      font-size: 0;
+
+      @include tablet {
+        font-size: inherit;
+      }
+    }
+    
+    small {
+      color: var(--color-primary);
+    }
   }
 }

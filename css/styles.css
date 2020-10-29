@@ -237,6 +237,13 @@ table {
     @media only screen and (min-width: 1200px) {
       .subhead__title {
         font-size: 30px; } }
+    .subhead__title span {
+      font-size: 0; }
+      @media only screen and (min-width: 768px) {
+        .subhead__title span {
+          font-size: inherit; } }
+    .subhead__title small {
+      color: var(--color-primary); }
 
 .item-grid {
   background: #fff;

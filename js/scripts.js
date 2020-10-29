@@ -358,12 +358,22 @@ if (path !== 'home') {
   
   const getTitle = (id) => {
     if (!pageId) {
+      if (path === 'search-results') {
+        // TODO: make this secure...?? 😬
+        const searchQuery = new URLSearchParams(window.location.search).get('search');
+        const searchResultsCount = grid.filter((item) => {
+          return item.title.toLowerCase().includes(searchQuery.toLowerCase());
+        });
+        const searchResultsTitle = `<span>Search for </span>&ldquo;${searchQuery}&rdquo; <small>(${searchResultsCount.length} results)</small>`;
+        return searchResultsTitle;
+      }
       switch (path) {
         case 'category': return 'Categories';
         case 'movie': return 'Movies';
         case 'license': return 'Licenses';
         case 'under10': return 'Under $10';
         case 'under20': return 'Under $20';
+        case 'search-results': return searchTitle();
       }
     }
     const getEl = titleMap.get(path).find(el => el.id === id);

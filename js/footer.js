@@ -58,7 +58,7 @@ export default `
     </div>
 
     <nav class="footer__links">
-      <a href="" class="footer__links-logo">Cool Movie Merch</a>
+      <a href="/" class="footer__links-logo">Cool Movie Merch</a>
       <ul class="footer__links-list">
         <li><a href="/">Featured Products</a></li>
         <li><a href="/under-10/">Under $10</a></li>
