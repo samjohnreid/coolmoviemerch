@@ -7,6 +7,7 @@ import quotes from '../data/quotes.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
+const aux = appContainer.dataset.aux;
 
 const gridContainer = document.querySelector('.item-grid__list');
 
@@ -374,6 +375,9 @@ if (path !== 'home') {
         case 'under10': return 'Under $10';
         case 'under20': return 'Under $20';
         case 'search-results': return searchTitle();
+        case 'about': return 'About Cool Movie Merch';
+        case 'contact': return 'Contact Cool Movie Merch';
+        case 'privacy': return 'Privacy Policy';
       }
     }
     const getEl = titleMap.get(path).find(el => el.id === id);
@@ -519,4 +523,41 @@ if (path === 'under10' || path === 'under20') {
   }).join('');
 
   gridContainer.innerHTML = underNResultItems;
+};
+
+
+// ------------------------------------------------------------
+
+
+// ********** AUXILIARY PAGES **********
+
+if (aux === 'true') {
+  
+  const auxContainer = document.querySelector('.aux');
+
+  let auxContent;
+
+  const auxContentAbout = `
+    <p>sadasdasdd</p>
+    <h3>about content goes here</h3>
+    <p>blah blah blah etc</p>
+  `;
+
+  const auxContentPrivacy = `
+    [ privacy content here ]
+  `;
+
+  const auxContentContact = `
+    [ contact content here ]
+  `;
+
+  if (path === 'about') {
+    auxContent = auxContentAbout;
+  } else if (path === 'privacy') {
+    auxContent = auxContentPrivacy;
+  } else if (path === 'contact') {
+    auxContent = auxContentContact;
+  }
+
+  auxContainer.innerHTML = auxContent;
 };

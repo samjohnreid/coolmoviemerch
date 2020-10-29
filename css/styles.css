@@ -543,6 +543,11 @@ table {
     .hero__nav img {
       width: 100%; }
 
+.aux {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-bottom: 50px; }
+
 .footer {
   border-top: 1px solid var(--color-gray-lightest);
   margin-top: -1px; }

@@ -68,9 +68,9 @@ export default `
         <li><a href="/license/">Licenses</a></li>
       </ul>
       <ul class="footer__links-list">
-        <li><a href="">About</a></li>
-        <li><a href="">Privacy</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
 
