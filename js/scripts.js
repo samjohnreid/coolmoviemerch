@@ -19,7 +19,7 @@ const gridContainer = document.querySelector('.item-grid__list');
 const navMenu = document.querySelector('.masthead__nav');
 const toggleMenu = () => {
   navMenu.classList.toggle('masthead__nav--active');
-}
+};
 
 document.addEventListener('click', (event) => {
   if (!event.target.matches('.masthead__hamburger')) return;
@@ -60,7 +60,7 @@ const getMovieOrLicense = (movieId, licenseId) => {
 const getCategory = (id) => {
   const getEl = categories.find(el => el.id === id);
   return getEl.title;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -68,7 +68,7 @@ const getCategory = (id) => {
 
 // ********** HERO **********
 
-const activateFirstSlide = slideNum => slideNum === 0 && 'hero__product--active';
+const activateFirstSlide = slideNum => slideNum === 0 ? 'hero__product--active' : '';
 
 const heroItems = heroes.map((hero, index) => {
   return `
@@ -114,7 +114,7 @@ const heroNavContainer = document.querySelector('.hero__nav');
 if (heroContainer) {
   heroContainer.innerHTML = heroItems;
   heroNavContainer.innerHTML = heroNavItems;
-}
+};
 
 // Hero navigation
 
@@ -169,7 +169,7 @@ if (path === 'home') {
   }).join('');
 
   gridContainer.innerHTML = gridItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -211,7 +211,7 @@ if (path === 'search-results') {
   }).join('');
 
   gridContainer.innerHTML = searchResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -253,7 +253,7 @@ if (path === 'category' && window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = categoryResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -295,7 +295,7 @@ if (path === 'movie' && window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = movieResultItems;
-}
+};
 
 // ------------------------------------------------------------
 
@@ -336,7 +336,7 @@ if (path === 'license' && window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = licenseResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -373,7 +373,7 @@ if (path !== 'home') {
   const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(pageId))}</h1>`;
 
   subheadContainer.innerHTML = subheadTitle;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -405,7 +405,7 @@ if (path === 'category' && !window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = categoryNavResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -437,7 +437,7 @@ if (path === 'movie' && !window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = movieNavResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -469,7 +469,7 @@ if (path === 'license' && !window.location.search) {
   }).join('');
 
   gridContainer.innerHTML = licenseNavResultItems;
-}
+};
 
 
 // ------------------------------------------------------------
@@ -509,4 +509,4 @@ if (path === 'under10' || path === 'under20') {
   }).join('');
 
   gridContainer.innerHTML = underNResultItems;
-}
+};

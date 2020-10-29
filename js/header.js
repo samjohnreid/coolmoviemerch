@@ -1,3 +1,46 @@
+const appContainer = document.getElementById('app');
+const path = appContainer.dataset.path;
+
+const mastheadLinks = [
+  {
+    pagePath: 'home',
+    href: '/',
+    text: 'Featured Products'
+  },
+  {
+    pagePath: 'under10',
+    href: '/under-10/',
+    text: 'Under $10'
+  },
+  {
+    pagePath: 'under20',
+    href: '/under-20/',
+    text: 'Under $20'
+  },
+  {
+    pagePath: 'category',
+    href: '/category/',
+    text: 'Categories'
+  },
+  {
+    pagePath: 'movie',
+    href: '/movie/',
+    text: 'Movies'
+  },
+  {
+    pagePath: 'license',
+    href: '/license/',
+    text: 'Licenses'
+  }
+];
+
+const renderMastheadLinks = mastheadLinks.map((link) => {
+  const activeLink = path === link.pagePath ? 'class="active"' : '';
+  return `
+    <li ${activeLink}><a href="${link.href}">${link.text}</a></li>
+  `;
+}).join('');
+
 export default `
   <header class="masthead">
     
@@ -14,12 +57,7 @@ export default `
 
     <nav class="masthead__nav">
       <ul class="masthead__nav-list">
-        <li class="active"><a href="/">Featured Products</a></li>
-        <li><a href="/under-10/">Under $10</a></li>
-        <li><a href="/under-20/">Under $20</a></li>
-        <li><a href="/category/">Categories</a></li>
-        <li><a href="/movie/">Movies</a></li>
-        <li><a href="/license/">Licenses</a></li>
+        ${renderMastheadLinks}
       </ul>
     </nav>
 

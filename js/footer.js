@@ -1,3 +1,16 @@
+/*
+/* social links, to go directly below <small> tag in .footer__social
+/* 
+<ul class="footer__social-links">
+  <li class="instagram"><a href="">Instagram</a></li>
+  <li class="facebook"><a href="">Facebook</a></li>
+  <li class="twitter"><a href="">Twitter</a></li>
+  <li class="pinterest"><a href="">Pinterest</a></li>
+</ul>
+*/
+
+const date = new Date();
+
 export default `
   <footer class="footer">
     
@@ -47,16 +60,14 @@ export default `
     <nav class="footer__links">
       <a href="" class="footer__links-logo">Cool Movie Merch</a>
       <ul class="footer__links-list">
-        <li><a href="">Newly Added</a></li>
-        <li><a href="">Product Type</a></li>
-        <li><a href="">License</a></li>
-        <li><a href="">Company</a></li>
-        <li><a href="">Movie</a></li>
-        <li><a href="">Under $10</a></li>
-        <li><a href="">Under $20</a></li>
+        <li><a href="/">Featured Products</a></li>
+        <li><a href="/under-10/">Under $10</a></li>
+        <li><a href="/under-20/">Under $20</a></li>
+        <li><a href="/category/">Categories</a></li>
+        <li><a href="/movie/">Movies</a></li>
+        <li><a href="/license/">Licenses</a></li>
       </ul>
       <ul class="footer__links-list">
-        <li><a href="">Blog</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Privacy</a></li>
         <li><a href="">Contact</a></li>
@@ -65,13 +76,8 @@ export default `
 
     <div class="footer__social-wrapper">
       <div class="footer__social">
-        <small>&copy; 2020 Cool Movie Merch. All Rights Reserved.</small>
-        <ul class="footer__social-links">
-          <li class="instagram"><a href="">Instagram</a></li>
-          <li class="facebook"><a href="">Facebook</a></li>
-          <li class="twitter"><a href="">Twitter</a></li>
-          <li class="pinterest"><a href="">Pinterest</a></li>
-        </ul>
+        <small>&copy; ${date.getFullYear()} Cool Movie Merch. All Rights Reserved.</small>
+        
       </div>
     </div>
 
