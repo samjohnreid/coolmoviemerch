@@ -84,7 +84,7 @@ const heroItems = heroes.map((hero, index) => {
       </div>
       <div class="hero__details">
         <h2 class="hero__title"><a href="${hero.url}">${hero.title}</a></h2>
-        <div class="hero__price"><span>$</span>${hero.price}</div>
+        <div class="hero__price"><span>$</span>${hero.price.toFixed(2)}</div>
         <ul class="hero__tags">
           <li>${getMovieOrLicense(hero.movie, hero.license)}</li>
           <li><a href="/category/?id=${hero.category}">${getCategory(hero.category)}</a></li>
@@ -157,7 +157,7 @@ if (path === 'home') {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
@@ -199,7 +199,7 @@ if (path === 'search-results') {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
@@ -241,7 +241,7 @@ if (path === 'category' && window.location.search) {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
@@ -283,7 +283,7 @@ if (path === 'movie' && window.location.search) {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
@@ -324,7 +324,7 @@ if (path === 'license' && window.location.search) {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
@@ -510,7 +510,7 @@ if (path === 'under10' || path === 'under20') {
         </div>
         <div class="item-grid__details">
           <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price}</div>
+          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
