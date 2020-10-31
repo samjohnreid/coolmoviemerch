@@ -79,7 +79,7 @@ const heroItems = heroes.map((hero, index) => {
           <source srcset="/img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
           <source srcset="/img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
           <source srcset="/img/items/hero/mobile/${hero.img}.jpg">
-          <img src="/img/items/hero/${hero.img}.jpg" alt="">
+          <img src="/img/items/hero/${hero.img}.jpg" alt="" loading="lazy">
         </picture>
       </div>
       <div class="hero__details">
@@ -102,7 +102,7 @@ const heroNavItems = heroes.map((hero, index) => {
       <button data-hero-nav-item="${index+1}">
         <picture>
           <source srcset="/img/items/hero/thumb/${hero.img}.jpg">
-          <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
+          <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="" loading="lazy">
         </picture>
       </button>
     </li>
@@ -151,7 +151,7 @@ if (path === 'home') {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -193,7 +193,7 @@ if (path === 'search-results') {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -235,7 +235,7 @@ if (path === 'category' && window.location.search) {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -277,7 +277,7 @@ if (path === 'movie' && window.location.search) {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -318,7 +318,7 @@ if (path === 'license' && window.location.search) {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -406,7 +406,7 @@ if (path === 'category' && !window.location.search) {
           <a href="/category/?id=${item.id}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -438,7 +438,7 @@ if (path === 'movie' && !window.location.search) {
           <a href="/movie/?id=${item.id}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -470,7 +470,7 @@ if (path === 'license' && !window.location.search) {
           <a href="/license/?id=${item.id}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
@@ -505,7 +505,7 @@ if (path === 'under10' || path === 'under20') {
           <a href="${item.url}">
             <picture>
               <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}">
+              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
         </div>
