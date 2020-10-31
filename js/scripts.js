@@ -76,7 +76,7 @@ const heroItems = heroes.map((hero, index) => {
     <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
       <div class="hero__image">
         <picture>
-          <source srcset="/img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
+          <source srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
           <source srcset="/img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
           <source srcset="/img/items/hero/mobile/${hero.img}.jpg">
           <img src="/img/items/hero/${hero.img}.jpg" alt="" loading="lazy">
