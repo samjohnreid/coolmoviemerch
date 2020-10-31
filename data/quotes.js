@@ -5,5 +5,20 @@ export default [
   `These aren't the droids you're looking for`,
   `Did you ever dance with the devil in the pale moonlight?`,
   `You're gonna need a bigger boat`,
-  `Hold on to your butts`
+  `Hold on to your butts`,
+  `I love the smell of napalm in the morning`,
+  `What we've got here is failure to communicate`,
+  `Go ahead, make my day`,
+  `I don't have to show you any stinking badges!`,
+  `We'll always have Paris`,
+  `I see dead people`,
+  `Gentlemen, you can't fight in here! This is the War Room!`,
+  `Get your stinking paws off me, you damned dirty ape`,
+  `I am serious... and don't call me Shirley`,
+  `You've got red on you`,
+  `Well, my name is Jim, but most people call me... Jim`,
+  `You will ride eternal, shiny and chrome`,
+  `If anyone orders merlot, I'm leaving`,
+  `Wouldst thou like to live deliciously?`,
+  `If they hadn't have done what l told them not to do, they'd still be alive`
 ];
