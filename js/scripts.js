@@ -568,3 +568,22 @@ if (aux === 'true') {
 
   auxContainer.innerHTML = auxContent;
 };
+
+
+// ------------------------------------------------------------
+
+
+// Prevent CLS on images
+
+
+
+
+
+
+
+
+
+
+
+
+

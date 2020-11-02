@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     title: `Funko Back to The Future Back in Time Board Game`,
-    price: 27.23,
+    price: 24.83,
     url: 'https://amzn.to/3lz6hRi',
     movie: 18,
     category: 2,
@@ -52,7 +52,7 @@ export default [
   {
     id: 6,
     title: 'Shredder Cheese Grater, TMNT Teenage Mutant Ninja Turtles Official Handheld Stainless-Steel Cheese Grater',
-    price: 12.90,
+    price: 10.49,
     url: 'https://amzn.to/34XHpMG',
     movie: null,
     category: 1,
