@@ -549,8 +549,8 @@ if (aux === 'true') {
 
   // TODO: update this policy when i start using localStorage for favorite items, and/or if i store search terms
   const auxContentPrivacy = `
-    <p>Cool Movie Merch does not use cookies or store or track any data about you whatsoever (well, unless you sign up for the newsletter - in which case a record of your email address will be kept).</p>
-    <p>If you sign up for our newsletter, a record of your email address will be stored for use purely to send out occasional emails regarding new merch listed on this site - and that email address will never be shared with anybody.</p>
+    <p>Cool Movie Merch does not use cookies or store or track any data about you of any kind whatsoever (well, unless you sign up for the newsletter&mdash;in which case a record of your email address will be kept).</p>
+    <p>If you sign up for the Cool Movie Merch newsletter, a record of your email address will be stored for use purely to send out occasional emails regarding new merch listed on this site&mdash;and that email address will never be shared with anybody.</p>
   `;
 
   // TODO: set up a forward on this email address! (to samueljclarke@gmail.com...?)
