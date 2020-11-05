@@ -379,6 +379,7 @@ if (path !== 'home') {
         case 'contact': return 'Contact Cool Movie Merch';
         case 'privacy': return 'Privacy Policy';
         case 'terms': return 'Terms of Use';
+        case 'newsletter': return 'Thank you for signing up!';
       }
     }
     const getEl = titleMap.get(path).find(el => el.id === id);
@@ -556,6 +557,14 @@ if (aux === 'true') {
     [ terms content here, stuff about price change etc. - hopefully safeguard against litigation! ]
   `;
 
+  const auxContentNewsletter = () => {
+    const newsletterEmail = new URLSearchParams(window.location.search).get('email');
+    return `
+      <p>You joined the Cool Movie Merch newsletter with the folling email: <strong>${newsletterEmail}</strong></p>
+    `;
+  };
+
+  // TODO: turn this into switch (like in getTitle?)
   if (path === 'about') {
     auxContent = auxContentAbout;
   } else if (path === 'privacy') {
@@ -564,6 +573,8 @@ if (aux === 'true') {
     auxContent = auxContentContact;
   } else if (path === 'terms') {
     auxContent = auxContentTerms;
+  } else if (path === 'newsletter') {
+    auxContent = auxContentNewsletter();
   }
 
   auxContainer.innerHTML = auxContent;
