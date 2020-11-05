@@ -545,22 +545,27 @@ if (aux === 'true') {
     <p>blah blah blah etc</p>
   `;
 
+  // TODO: update this policy when i start using localStorage for favorite items, and/or if i store search terms
   const auxContentPrivacy = `
-    [ privacy content here ]
+    <p>Cool Movie Merch does not use cookies or store or track any data about you whatsoever (well, unless you sign up for the newsletter - in which case a record of your email address will be kept).</p>
+    <p>If you sign up for our newsletter, a record of your email address will be stored for use purely to send out occasional emails regarding new merch listed on this site - and that email address will never be shared with anybody.</p>
   `;
 
+  // TODO: set up a forward on this email address! (to samueljclarke@gmail.com...?)
+  // TODO: captcha...?
   const auxContentContact = `
-    [ contact content here ]
+    <p>Please reach out if you have any questions regarding any of the content on this site: <a href="mailto:info@coolmoviemerch.com">info@coolmoviemerch.com</a></p>
   `;
 
   const auxContentTerms = `
-    [ terms content here, stuff about price change etc. - hopefully safeguard against litigation! ]
+    <p>Cool Movie Merch is a participant in multiple affiliate advertising programs, including the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for affiliates to earn fees (at no additional cost to you!) by linking to Amazon.com and affiliated sites.</p>
+    <p>By using this site, you agree that it is your responsibility to ensure any prices listed on this site are accurate on the partner site. Cool Movie Merch is not responsible for any discrepancies in price listed on this site against those at point-of-sale. (Basically, please be sure to keep your eye on the price when you're checking out!)</p>
   `;
 
   const auxContentNewsletter = () => {
     const newsletterEmail = new URLSearchParams(window.location.search).get('email');
     return `
-      <p>You joined the Cool Movie Merch newsletter with the folling email: <strong>${newsletterEmail}</strong></p>
+      <p>You joined the Cool Movie Merch newsletter with the following email: <strong>${newsletterEmail}</strong></p>
     `;
   };
 

@@ -1,5 +1,14 @@
 .aux {
+  line-height: 1.5;;
   margin: 0 auto;
   max-width: 1200px;
   padding-bottom: 50px;
+
+  p:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
 }

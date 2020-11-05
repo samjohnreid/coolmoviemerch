@@ -547,9 +547,14 @@ strong {
       width: 100%; }
 
 .aux {
+  line-height: 1.5;
   margin: 0 auto;
   max-width: 1200px;
   padding-bottom: 50px; }
+  .aux p:not(:last-child) {
+    margin-bottom: 20px; }
+  .aux a {
+    color: var(--color-primary); }
 
 .footer {
   border-top: 1px solid var(--color-gray-lightest);
