@@ -550,7 +550,10 @@ strong {
   line-height: 1.5;
   margin: 0 auto;
   max-width: 1200px;
-  padding-bottom: 50px; }
+  padding: 0 15px 50px; }
+  @media only screen and (min-width: 768px) {
+    .aux {
+      padding: 0 0 50px; } }
   .aux p:not(:last-child) {
     margin-bottom: 20px; }
   .aux a {

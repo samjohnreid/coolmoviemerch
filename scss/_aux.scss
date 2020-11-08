@@ -2,7 +2,11 @@
   line-height: 1.5;;
   margin: 0 auto;
   max-width: 1200px;
-  padding-bottom: 50px;
+  padding: 0 15px 50px;
+
+  @include tablet {
+    padding: 0 0 50px;
+  }
 
   p:not(:last-child) {
     margin-bottom: 20px;
