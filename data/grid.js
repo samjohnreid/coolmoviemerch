@@ -465,7 +465,7 @@ export default [
     id: 43,
     title: `The Mandalorian: The Child, Stand for Amazon Echo Dot (3rd Gen)`,
     price: 24.95,
-    url: 'stand-back-you-must-new-mask-type-c-star-wars-the-mandalorian-the-child-one-size-fits-most',
+    url: 'https://www.amazon.com/All-Made-Amazon-featuring-Mandalorian/dp/B086W7PH7N/ref=sr_1_1?dchild=1&keywords=The+Mandalorian%3A+The+Child%2C+Stand+for+Amazon+Echo+Dot&qid=1604855169&sr=8-1',
     movie: 17,
     category: 1,
     license: 8,
