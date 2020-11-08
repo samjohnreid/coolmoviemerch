@@ -152,7 +152,7 @@ if (path === 'home') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -193,7 +193,7 @@ if (path === 'search-results') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -234,7 +234,7 @@ if (path === 'category' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -275,7 +275,7 @@ if (path === 'movie' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -315,7 +315,7 @@ if (path === 'license' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -403,7 +403,7 @@ if (path === 'category' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/category/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -435,7 +435,7 @@ if (path === 'movie' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/movie/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -467,7 +467,7 @@ if (path === 'license' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/license/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -502,7 +502,7 @@ if (path === 'under10' || path === 'under20') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
+              <source srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
