@@ -131,7 +131,7 @@ const heroItems = heroes.map((hero, index) => {
           <source type="image/avif" srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
           <source type="image/avif" srcset="/img/items/hero/tablet/${hero.img}.avif" media="(min-width: 768px)">
           <source type="image/avif" srcset="/img/items/hero/mobile/${hero.img}.avif">
-          <img src="/img/items/hero/${hero.img}.jpg" alt="">
+          <img src="/img/items/hero/mobile/${hero.img}.jpg" alt="">
         </picture>
       </div>
       <div class="hero__details">
