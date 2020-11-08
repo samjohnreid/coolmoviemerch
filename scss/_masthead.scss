@@ -94,9 +94,14 @@
       font-family: var(--font-primary);
       font-size: 14px;
       font-weight: bold;
-      height: 35px;
+      height: 34px;
       margin: 0;
-      padding: 0 0 2px 20px;
+      padding: 1px 0 2px 20px;
+
+      @include tablet {
+        height: 35px;
+        padding-top: 0;
+      }
 
       &:focus:not(:focus-visible) {
         outline: 0;
