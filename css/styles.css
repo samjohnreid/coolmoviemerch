@@ -403,7 +403,6 @@ strong {
   .hero__products {
     display: flex;
     overflow-x: scroll;
-    position: re;
     scroll-snap-type: x mandatory; }
     @media only screen and (min-width: 768px) {
       .hero__products {
@@ -483,6 +482,7 @@ strong {
     border-radius: 0 0 45px 45px;
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding: 0 25px 25px 25px;
     z-index: 1; }
     @media only screen and (min-width: 768px) {

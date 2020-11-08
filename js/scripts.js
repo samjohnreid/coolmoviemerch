@@ -11,6 +11,9 @@ const aux = appContainer.dataset.aux;
 
 const gridContainer = document.querySelector('.item-grid__list');
 
+// code for adding Product Details, add directly below <ul class="hero__tags">
+// <div class="hero__more-details"><a href="">Product Details</a></div>
+
 
 // ------------------------------------------------------------
 
@@ -89,7 +92,6 @@ const heroItems = heroes.map((hero, index) => {
           <li>${getMovieOrLicense(hero.movie, hero.license)}</li>
           <li><a href="/category/?id=${hero.category}">${getCategory(hero.category)}</a></li>
         </ul>
-        <div class="hero__more-details"><a href="">Product Details</a></div>
         <a href="${hero.url}" class="hero__button">BUY NOW</a>
       </div>
     </li>
@@ -162,7 +164,6 @@ if (path === 'home') {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -204,7 +205,6 @@ if (path === 'search-results') {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -246,7 +246,6 @@ if (path === 'category' && window.location.search) {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -288,7 +287,6 @@ if (path === 'movie' && window.location.search) {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -329,7 +327,6 @@ if (path === 'license' && window.location.search) {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -517,7 +514,6 @@ if (path === 'under10' || path === 'under20') {
             <li>${getMovieOrLicense(item.movie, item.license)}</li>
             <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
           </ul>
-          <div class="item-grid__more-details"><a href="">Product Details</a></div>
           <a href="${item.url}" class="item-grid__button">BUY NOW</a>
         </div>
       </li>
@@ -591,7 +587,7 @@ if (aux === 'true') {
 // ------------------------------------------------------------
 
 
-// Prevent CLS on images
+// Prevent CLS on hero images
 
 
 
