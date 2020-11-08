@@ -50,7 +50,7 @@ export default `
           <h2>Receive very occasional emails with cool new merch.</h2>
           <h3>(Promise not to share your email with anybody else!)</h3>
         </div>
-        <form class="footer__newsletter-form" method="post" action="newsletter.php">
+        <form class="footer__newsletter-form" method="post" action="/newsletter.php">
           <input type="email" name="email" placeholder="email@example.com">
           <button><span>Sign Me Up!</span></button>
         </form>
