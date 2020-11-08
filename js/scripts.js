@@ -131,7 +131,7 @@ const heroItems = heroes.map((hero, index) => {
           <source srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
           <source srcset="/img/items/hero/tablet/${hero.img}.avif" media="(min-width: 768px)">
           <source srcset="/img/items/hero/mobile/${hero.img}.avif">
-          <img src="/img/items/hero/${hero.img}.jpg" alt="" loading="lazy">
+          <img src="/img/items/hero/${hero.img}.jpg" alt="">
         </picture>
       </div>
       <div class="hero__details">
@@ -153,7 +153,7 @@ const heroNavItems = heroes.map((hero, index) => {
       <button data-hero-nav-item="${index+1}">
         <picture>
           <source srcset="/img/items/hero/thumb/${hero.img}.avif">
-          <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="" loading="lazy">
+          <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
         </picture>
       </button>
     </li>
