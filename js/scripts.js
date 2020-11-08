@@ -128,9 +128,9 @@ const heroItems = heroes.map((hero, index) => {
     <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
       <div class="hero__image">
         <picture>
-          <source srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
-          <source srcset="/img/items/hero/tablet/${hero.img}.avif" media="(min-width: 768px)">
-          <source srcset="/img/items/hero/mobile/${hero.img}.avif">
+          <source type="image/avif" srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
+          <source type="image/avif" srcset="/img/items/hero/tablet/${hero.img}.avif" media="(min-width: 768px)">
+          <source type="image/avif" srcset="/img/items/hero/mobile/${hero.img}.avif">
           <img src="/img/items/hero/${hero.img}.jpg" alt="">
         </picture>
       </div>
@@ -152,7 +152,7 @@ const heroNavItems = heroes.map((hero, index) => {
     <li>
       <button data-hero-nav-item="${index+1}">
         <picture>
-          <source srcset="/img/items/hero/thumb/${hero.img}.avif">
+          <source type="image/avif" srcset="/img/items/hero/thumb/${hero.img}.avif">
           <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
         </picture>
       </button>
@@ -201,7 +201,7 @@ if (path === 'home') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -242,7 +242,7 @@ if (path === 'search-results') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -283,7 +283,7 @@ if (path === 'category' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -324,7 +324,7 @@ if (path === 'movie' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -364,7 +364,7 @@ if (path === 'license' && window.location.search) {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -452,7 +452,7 @@ if (path === 'category' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/category/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -484,7 +484,7 @@ if (path === 'movie' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/movie/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -516,7 +516,7 @@ if (path === 'license' && !window.location.search) {
         <div class="item-grid__image">
           <a href="/license/?id=${item.id}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
@@ -551,7 +551,7 @@ if (path === 'under10' || path === 'under20') {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.avif">
+              <source type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
