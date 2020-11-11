@@ -31,13 +31,13 @@ export default [
   },
   {
     id: 4,
-    title: `Star Wars Rebel Officially Licensed Silicone Smartwatch Band Compatible with Apple Watch`,
+    title: `DC Comics Batman Icon Edition Officially Licensed Silicone Smartwatch Band Compatible with Apple Watch`,
     price: 39.90,
-    url: 'https://amzn.to/3lAcZqf',
-    movie: 7,
+    url: 'https://amzn.to/2Uc4ciG',
+    movie: null,
     category: 3,
-    license: 3,
-    img: 'star-wars-rebel-officially-licensed-silicone-smartwatch-band-compatible-with-apple-watch'
+    license: 17,
+    img: 'dc-comics-batman-icon-edition-officially-licensed-silicone-smartwatch-band-compatible-with-apple-watch'
   },
   {
     id: 5,
