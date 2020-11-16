@@ -112,13 +112,6 @@ export default [
     img: 'paladone-casino-royale-poker-chip-coasters-officially-licensed-james-bond-007-merchandise'
   },
   {
-    id: 17,
-    title: `The Mandalorian`,
-    year: 2019,
-    director: `Jon Favreau`,
-    img: 'the-mandalorian-the-child-stand-for-amazon-echo-dot-3rd-gen'
-  },
-  {
     id: 18,
     title: `Back to the Future`,
     year: 1985,
@@ -202,4 +195,11 @@ export default [
     director: `Joe Dante`,
     img: 'paladone-gremlins-gizmo-coffee-mug-officially-licensed'
   },
+  {
+    id: 30,
+    title: `The Nightmare Before Christmas`,
+    year: 1993,
+    director: `Henry Selick`,
+    img: 'hyper-pet-disneys-nightmare-before-christmas-jack-plush-dog-toy'
+  }
 ];

@@ -12,7 +12,7 @@ export default [
   {
     id: 3,
     title: 'Accessories',
-    img: 'star-wars-rebel-officially-licensed-silicone-smartwatch-band-compatible-with-apple-watch'
+    img: 'dc-comics-batman-icon-edition-officially-licensed-silicone-smartwatch-band-compatible-with-apple-watch'
   },
   {
     id: 4,
@@ -68,5 +68,10 @@ export default [
     id: 14,
     title: 'Cosplay',
     img: 'fifth-element-cosplay-futuristic-strappy-stretchy-costume-bodysuit-with-cutouts'
+  },
+  {
+    id: 15,
+    title: 'Pets',
+    img: 'fetch-for-pets-star-wars-chewbacca-squeaky-plush-dog-toy'
   }
 ];
