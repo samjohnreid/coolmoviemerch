@@ -20,5 +20,15 @@ export default [
   `You will ride eternal, shiny and chrome`,
   `If anyone orders merlot, I'm leaving`,
   `Wouldst thou like to live deliciously?`,
-  `If they hadn't have done what l told them not to do, they'd still be alive`
+  `If they hadn't have done what l told them not to do, they'd still be alive`,
+  `You're a big man, but you're in bad shape. With me it's a full time job`,
+  `Bring me four fried chickens and a Coke`,
+  `Each of us is wearing an unlicensed nuclear accelerator on his back`,
+  `They drew first blood, not me`,
+  `There can be only one`,
+  `Snakes! Why'd it have to be snakes?`,
+  `Life isn't fair, Highness. Anyone who says otherwise is selling something`,
+  `The whiskey helped, but I didn't want to get sloppy... so I switched to beer`,
+  `Strange things are afoot at the Circle K`,
+  `That's not a knife`
 ];
