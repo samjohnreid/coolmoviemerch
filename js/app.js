@@ -15,13 +15,8 @@ const app = `
   ${header}
 
   <main>
-    
-    ${path === 'home' ? hero : ''}
-
-    ${path !== 'home' ? subhead : ''}
-
+    ${path === 'home' ? hero : subhead}
     ${aux === 'true' ? auxPage : grid}
-
   </main>
 
   ${footer}
