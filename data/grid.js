@@ -1615,5 +1615,49 @@ export default [
     license: 17,
     featured: false,
     img: 'buckle-down-superman-squeaky-plush-dog-toy'
+  },
+  {
+    id: 148,
+    title: `John Wick Luxury Enamel Pin`,
+    price: 14.99,
+    url: 'https://www.entertainmentearth.com/product/LISJWJW1PINV1?id=CO-005242372',
+    movie: 3,
+    category: 3,
+    license: 20,
+    featured: false,
+    img: 'john-wick-luxury-enamel-pin'
+  },
+  {
+    id: 149,
+    title: `John Wick A Pencil Hard Enamel Pin`,
+    price: 11.99,
+    url: 'https://www.entertainmentearth.com/product/LISJWPPINV1?id=CO-005242372',
+    movie: 3,
+    category: 3,
+    license: 20,
+    featured: false,
+    img: 'john-wick-a-pencil-hard-enamel-pin'
+  },
+  {
+    id: 150,
+    title: `John Wick (2014) 1969 Ford Mustang BOSS 429 1:18 Scale Die-Cast Metal Vehicle`,
+    price: 124.99,
+    url: 'https://www.entertainmentearth.com/product/GLHWY18016?id=CO-005242372',
+    movie: 3,
+    category: 12,
+    license: 20,
+    featured: false,
+    img: 'john-wick-2014-1969-ford-mustang-boss-429-1-18-scale-die-cast-metal-vehicle'
+  },
+  {
+    id: 151,
+    title: `John Wick Deluxe Action Figure Box Set`,
+    price: 44.99,
+    url: 'https://www.entertainmentearth.com/product/DC84192?id=CO-005242372',
+    movie: 3,
+    category: 5,
+    license: 20,
+    featured: false,
+    img: 'john-wick-deluxe-action-figure-box-set'
   }
 ];
