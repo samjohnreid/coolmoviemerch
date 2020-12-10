@@ -188,14 +188,10 @@ document.addEventListener('click', (e) => {
 // ------------------------------------------------------------
 
 
-// ********** HOMEPAGE **********
+// ********** RENDER GRID ITEMS FUNCTION **********
 
-if (path === 'home') {
-  const featuredResults = items.filter((item) => {
-    return item.featured === true;
-  });
-  
-  const gridItems = featuredResults.map((item) => {
+const renderGridItems = (itemData) => {
+  const gridItems = itemData.map((item) => {
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
@@ -226,6 +222,20 @@ if (path === 'home') {
 // ------------------------------------------------------------
 
 
+// ********** HOMEPAGE **********
+
+if (path === 'home') {
+  const featuredResults = items.filter((item) => {
+    return item.featured === true;
+  });
+  
+  renderGridItems(featuredResults);
+};
+
+
+// ------------------------------------------------------------
+
+
 // ********** SEARCH RESULTS **********
 
 if (path === 'search-results') {
@@ -236,31 +246,7 @@ if (path === 'search-results') {
     return item.title.toLowerCase().includes(searchQuery);
   });
 
-  const searchResultItems = searchResults.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = searchResultItems;
+  renderGridItems(searchResults);
 };
 
 
@@ -277,31 +263,7 @@ if (path === 'category' && window.location.search) {
     return item.category === parseInt(catId);
   });
 
-  const categoryResultItems = categoryResults.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = categoryResultItems;
+  renderGridItems(categoryResults);
 };
 
 
@@ -318,31 +280,7 @@ if (path === 'movie' && window.location.search) {
     return item.movie === parseInt(movieId);
   });
 
-  const movieResultItems = movieResults.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = movieResultItems;
+  renderGridItems(movieResults);
 };
 
 // ------------------------------------------------------------
@@ -358,31 +296,7 @@ if (path === 'license' && window.location.search) {
     return item.license === parseInt(licenseId);
   });
 
-  const licenseResultItems = licenseResults.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = licenseResultItems;
+  renderGridItems(licenseResults);
 };
 
 
@@ -545,31 +459,7 @@ if (path === 'under10' || path === 'under20') {
     return item.price < amount;
   });
   
-  const underNResultItems = underNResults.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = underNResultItems;
+  renderGridItems(underNResults);
 };
 
 
