@@ -2,7 +2,7 @@ import movies from '../data/movies.js';
 import categories from '../data/categories.js';
 import licenses from '../data/licenses.js';
 import heroes from '../data/heroes.js';
-import grid from '../data/grid.js';
+import items from '../data/items.js';
 import quotes from '../data/quotes.js';
 
 const appContainer = document.getElementById('app');
@@ -191,7 +191,7 @@ document.addEventListener('click', (e) => {
 // ********** HOMEPAGE **********
 
 if (path === 'home') {
-  const featuredResults = grid.filter((item) => {
+  const featuredResults = items.filter((item) => {
     return item.featured === true;
   });
   
@@ -232,7 +232,7 @@ if (path === 'search-results') {
   // TODO: make this secure...?? 😬
   const searchQuery = new URLSearchParams(window.location.search).get('search').toLowerCase();
 
-  const searchResults = grid.filter((item) => {
+  const searchResults = items.filter((item) => {
     return item.title.toLowerCase().includes(searchQuery);
   });
 
@@ -273,7 +273,7 @@ if (path === 'category' && window.location.search) {
   // TODO: make this secure...?? 😬
   const catId = new URLSearchParams(window.location.search).get('id');
 
-  const categoryResults = grid.filter((item) => {
+  const categoryResults = items.filter((item) => {
     return item.category === parseInt(catId);
   });
 
@@ -314,7 +314,7 @@ if (path === 'movie' && window.location.search) {
   // TODO: make this secure...?? 😬
   const movieId = new URLSearchParams(window.location.search).get('id');
 
-  const movieResults = grid.filter((item) => {
+  const movieResults = items.filter((item) => {
     return item.movie === parseInt(movieId);
   });
 
@@ -354,7 +354,7 @@ if (path === 'license' && window.location.search) {
   // TODO: make this secure...?? 😬
   const licenseId = new URLSearchParams(window.location.search).get('id');
 
-  const licenseResults = grid.filter((item) => {
+  const licenseResults = items.filter((item) => {
     return item.license === parseInt(licenseId);
   });
 
@@ -408,7 +408,7 @@ if (path !== 'home') {
       if (path === 'search-results') {
         // TODO: make this secure...?? 😬
         const searchQuery = new URLSearchParams(window.location.search).get('search');
-        const searchResultsCount = grid.filter((item) => {
+        const searchResultsCount = items.filter((item) => {
           return item.title.toLowerCase().includes(searchQuery.toLowerCase());
         });
         const searchResultsTitle = `<span>Search for </span>&ldquo;${searchQuery}&rdquo; <small>(${searchResultsCount.length} results)</small>`;
@@ -445,7 +445,7 @@ if (path !== 'home') {
 
 if (path === 'category' && !window.location.search) {  
   const categoryNavResultItems = categories.map((item) => {
-    const itemCount = grid.filter(gridItem => gridItem.category === item.id);
+    const itemCount = items.filter(gridItem => gridItem.category === item.id);
     
     return `
       <li class="item-grid__item">
@@ -477,7 +477,7 @@ if (path === 'category' && !window.location.search) {
 
 if (path === 'movie' && !window.location.search) {  
   const movieNavResultItems = movies.map((item) => {
-    const itemCount = grid.filter(gridItem => gridItem.movie === item.id);
+    const itemCount = items.filter(gridItem => gridItem.movie === item.id);
     
     return `
       <li class="item-grid__item">
@@ -509,7 +509,7 @@ if (path === 'movie' && !window.location.search) {
 
 if (path === 'license' && !window.location.search) {  
   const licenseNavResultItems = licenses.map((item) => {
-    const itemCount = grid.filter(gridItem => gridItem.license === item.id);
+    const itemCount = items.filter(gridItem => gridItem.license === item.id);
     
     return `
       <li class="item-grid__item">
@@ -540,7 +540,7 @@ if (path === 'license' && !window.location.search) {
 // ********** UNDER $10 & $20 NAVIGATION **********
 
 if (path === 'under10' || path === 'under20') {  
-  const underNResults = grid.filter((item) => {
+  const underNResults = items.filter((item) => {
     const amount = path === 'under10' ? 10 : 20;
     return item.price < amount;
   });
