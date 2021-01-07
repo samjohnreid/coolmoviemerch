@@ -320,21 +320,7 @@ if (path === 'under10' || path === 'under20') {
 
 // ********** RENDER GRID CATEGORIES FUNCTION **********
 
-const renderGridCategories = (itemData) => {
-  const gridCategories = itemData.map((item) => {
-    // code
-  }).join('');
-
-  gridContainer.innerHTML = gridCategories;
-};
-
-
-// ------------------------------------------------------------
-
-
-// ********** CATEGORIES NAVIGATION **********
-
-if (path === 'category' && !window.location.search) {  
+const renderGridCategories = () => {
   const categoryNavResultItems = categories.map((item) => {
     const itemCount = items.filter(gridItem => gridItem.category === item.id);
     
@@ -359,6 +345,13 @@ if (path === 'category' && !window.location.search) {
 
   gridContainer.innerHTML = categoryNavResultItems;
 };
+
+// ------------------------------------------------------------
+
+
+// ********** CATEGORIES NAVIGATION **********
+
+path === 'category' && !window.location.search && renderGridCategories(categories);
 
 
 // ------------------------------------------------------------
