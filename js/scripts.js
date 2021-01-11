@@ -320,14 +320,16 @@ if (path === 'under10' || path === 'under20') {
 
 // ********** RENDER GRID CATEGORIES FUNCTION **********
 
-const renderGridCategories = () => {
-  const categoryNavResultItems = categories.map((item) => {
+const renderGridCategories = (category) => {
+  const categoryNavResultItems = category.map((item) => {
     const itemCount = items.filter(gridItem => gridItem.category === item.id);
+
+    console.log('path', path);
     
     return `
       <li class="item-grid__item">
         <div class="item-grid__image">
-          <a href="/category/?id=${item.id}">
+          <a href="/${path}/?id=${item.id}">
             <picture>
               <source type="image/avif" type="image/avif" srcset="/img/items/${item.img}.avif">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
@@ -336,8 +338,8 @@ const renderGridCategories = () => {
         </div>
         <div class="item-grid__details">
           <div class="item-grid__title">${itemCount.length} Items</div>
-          <h2 class="item-grid__price"><a href="/category/?id=${item.id}">${item.title}</a></h2>
-          <a href="/category/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
+          <h2 class="item-grid__price"><a href="/${path}/?id=${item.id}">${item.title}</a></h2>
+          <a href="/${path}/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
         </div>
       </li>
     `;
@@ -359,31 +361,7 @@ path === 'category' && !window.location.search && renderGridCategories(categorie
 
 // ********** MOVIES NAVIGATION **********
 
-if (path === 'movie' && !window.location.search) {  
-  const movieNavResultItems = movies.map((item) => {
-    const itemCount = items.filter(gridItem => gridItem.movie === item.id);
-    
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="/movie/?id=${item.id}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <div class="item-grid__title">${itemCount.length} Items</div>
-          <h2 class="item-grid__price"><a href="/movie/?id=${item.id}">${item.title}</a></h2>
-          <a href="/movie/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = movieNavResultItems;
-};
+path === 'movie' && !window.location.search && renderGridCategories(movies);
 
 
 // ------------------------------------------------------------
@@ -391,31 +369,7 @@ if (path === 'movie' && !window.location.search) {
 
 // ********** LICENSES NAVIGATION **********
 
-if (path === 'license' && !window.location.search) {  
-  const licenseNavResultItems = licenses.map((item) => {
-    const itemCount = items.filter(gridItem => gridItem.license === item.id);
-    
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="/license/?id=${item.id}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <div class="item-grid__title">${itemCount.length} Items</div>
-          <h2 class="item-grid__price"><a href="/license/?id=${item.id}">${item.title}</a></h2>
-          <a href="/license/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = licenseNavResultItems;
-};
+path === 'license' && !window.location.search && renderGridCategories(licenses);
 
 
 // ------------------------------------------------------------
