@@ -12,13 +12,12 @@ import subhead from './functions/subhead.js';
 import auxPages from './functions/auxPages.js';
 import hero from './functions/hero.js';
 
+// Helpers
+import renderGridItems from './helpers/renderGridItems.js';
+import renderGridCategories from './helpers/renderGridCategories.js';
+
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
-
-const gridContainer = document.querySelector('.item-grid__list');
-
-// code for adding Product Details, add directly below <ul class="hero__tags">
-// <div class="hero__more-details"><a href="">Product Details</a></div>
 
 
 // ------------------------------------------------------------
@@ -48,60 +47,9 @@ movieQuotes();
 // ------------------------------------------------------------
 
 
-const getMovieOrLicense = (movieId, licenseId) => {
-  const listingType = movieId ? movies : licenses;
-  const listingId = movieId ? movieId : licenseId;
-  const listingPath = movieId ? 'movie' : 'license';
-  const getEl = listingType.find(el => el.id === listingId);
-  return `<a href="/${listingPath}/?id=${getEl.id}">${getEl.title}</a>`;
-}
-
-const getCategory = (id) => {
-  const getEl = categories.find(el => el.id === id);
-  return getEl.title;
-};
-
-
-// ------------------------------------------------------------
-
-
 // ********** HERO **********
 
 hero();
-
-
-// ------------------------------------------------------------
-
-
-// ********** RENDER GRID ITEMS FUNCTION **********
-
-const renderGridItems = (itemData) => {
-  const gridItems = itemData.map((item) => {
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="${item.url}">
-            <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
-          <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
-          <ul class="item-grid__tags">
-            <li>${getMovieOrLicense(item.movie, item.license)}</li>
-            <li><a href="/category/?id=${item.category}">${getCategory(item.category)}</a></li>
-          </ul>
-          <a href="${item.url}" class="item-grid__button">BUY NOW</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = gridItems;
-};
 
 
 // ------------------------------------------------------------
@@ -199,39 +147,6 @@ if (path === 'under10' || path === 'under20') {
   renderGridItems(underNResults);
 };
 
-
-// ------------------------------------------------------------
-
-
-// ********** RENDER GRID CATEGORIES FUNCTION **********
-
-const renderGridCategories = (category) => {
-  const categoryNavResultItems = category.map((item) => {
-    const itemCount = items.filter(gridItem => gridItem.category === item.id);
-
-    console.log('path', path);
-    
-    return `
-      <li class="item-grid__item">
-        <div class="item-grid__image">
-          <a href="/${path}/?id=${item.id}">
-            <picture>
-              <source type="image/avif" type="image/avif" srcset="/img/items/${item.img}.avif">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
-            </picture>
-          </a>
-        </div>
-        <div class="item-grid__details">
-          <div class="item-grid__title">${itemCount.length} Items</div>
-          <h2 class="item-grid__price"><a href="/${path}/?id=${item.id}">${item.title}</a></h2>
-          <a href="/${path}/?id=${item.id}" class="item-grid__button">VIEW ITEMS</a>
-        </div>
-      </li>
-    `;
-  }).join('');
-
-  gridContainer.innerHTML = categoryNavResultItems;
-};
 
 // ------------------------------------------------------------
 

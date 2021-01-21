@@ -1,5 +1,8 @@
 import heroes from '../data/heroes.js';
-import { getMovieOrLicense, getCategory } from './getItemInfo.js';
+import { getMovieOrLicense, getCategory } from '../helpers/getItemInfo.js';
+
+// code for adding Product Details, add directly below <ul class="hero__tags">
+// <div class="hero__more-details"><a href="">Product Details</a></div>
 
 const hero = () => {
   const activateFirstSlide = slideNum => slideNum === 0 ? 'hero__product--active' : '';
