@@ -1,4 +1,5 @@
 .masthead {
+  min-width: 375px;
   padding: 0;
 
   &__upper-wrapper {
@@ -12,36 +13,106 @@
     margin: 0 auto;
     justify-content: center;
     position: relative;
-    width: 1200px;
+    max-width: 1200px;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+
+    @include desktop {
+      justify-content: center;
+    }
   }
 
   &__logo {
-    background: url(../img/logo-cool-movie-merch.png) no-repeat;
+    background: url(../img/logo-cool-movie-merch-mobile.png) no-repeat;
     background-size: contain;
     display: block;
     font-size: 0;
     height: 28px;
-    left: 0;
+    left: 15px;
     position: absolute;
-    width: 267px;
+    width: 28px;
+
+    @include tablet {
+      background-image: url(../img/logo-cool-movie-merch.png);
+      left: 25px;
+      width: 267px;
+    }
+
+    @include desktop {
+      left: 0;
+    }
   }
 
   &__search {
     display: flex;
+    margin: 0 60px 0 68px;
+    max-width: 587px;
+    position: relative;
+    width: 100%;
+
+    @include tablet {
+      margin: 0 25px 0 317px;
+    }
+
+    @include desktop {
+      margin: 0;
+    }
+
+    &::after {
+      
+      @include tablet {
+        content: attr(data-movie-quote-placeholder);
+        position: absolute;
+        color: var(--color-gray-lighter);
+        font-family: var(--font-primary);
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        padding: 0 0 2px 20px;
+        pointer-events: none;
+        text-overflow: ellipsis;
+        top: 11px;
+        white-space: nowrap;
+        width: calc(100% - 57px);
+      }
+    }
+
+    &:focus-within {
+      
+      &::after {
+        font-size: 0;
+      }
+    }
 
     input {
       border: none;
       border-radius: 37px 0 0 37px;
       color: var(--color-gray-darkest);
+      flex-grow: 1;
       font-family: var(--font-primary);
       font-size: 14px;
       font-weight: bold;
-      height: 35px;
-      padding: 0 0 2px 20px;
-      width: 530px;
+      height: 34px;
+      margin: 0;
+      padding: 1px 0 2px 20px;
+
+      @include tablet {
+        height: 35px;
+        padding-top: 0;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
 
       &::placeholder {
         color: var(--color-gray-lighter);
+
+        @include tablet {
+          font-size: 0;
+        }
       }
     }
 
@@ -61,35 +132,97 @@
     }
   }
 
+  &__hamburger {
+    background: url(../img/icon-hamburger-nav.png) no-repeat left center;
+    background-size: 56px;
+    border: none;
+    font-size: 0;
+    height: 28px;
+    position: absolute;
+    right: 15px;
+    width: 28px;
+
+    @include tablet {
+      display: none;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+  
   &__nav-list {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding: 10px 0;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 0;
+    }
 
     li {
-      margin: 0 25px;
+      font-size: 14px;
+      text-align: center;
+
+      @include tablet {
+        margin: 0 10px;
+      }
+
+      @include desktop {
+        margin: 0 25px;
+      }
     }
 
     a {
       align-items: center;
       color: #fff;
       display: flex;
-      font-size: 14px;
       font-weight: bold;
-      height: 50px;
+      height: 40px;
+      justify-content: center;
       position: relative;
       text-decoration: none;
+
+      @include tablet {
+        height: 50px;
+      }
     }
 
     .active,
     li:hover {
+      
+      a {
+        color: var(--color-primary);
+
+        @include tablet {
+          color: #fff;
+        }
+      }
 
       a::after {
-        background: var(--color-primary);
-        bottom: 0;
-        content: '';
-        height: 5px;
-        position: absolute;
-        width: 100%;
+        
+        @include tablet {
+          background: var(--color-primary);
+          bottom: 0;
+          content: '';
+          height: 5px;
+          position: absolute;
+          width: 100%;
+        }
       }
     }
   }

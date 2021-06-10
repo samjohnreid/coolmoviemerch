@@ -1,0 +1,7 @@
+.subhead {
+  margin: 0 auto;
+  max-width: 1200px; }
+  .subhead__title {
+    font-family: var(--font-secondary);
+    font-size: 30px;
+    margin-bottom: 25px; }

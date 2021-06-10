@@ -1,0 +1,38 @@
+.subhead {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px 15px 15px;
+
+  @include tablet {
+    padding: 0 25px 15px 25px;
+  }
+
+  @include desktop {
+    padding: 0 0 25px 0;
+  }
+
+  &__title {
+    font-family: var(--font-secondary);
+    font-size: 20px;
+
+    @include tablet {
+      font-size: 25px;
+    }
+  
+    @include desktop {
+      font-size: 30px;
+    }
+
+    span {
+      font-size: 0;
+
+      @include tablet {
+        font-size: inherit;
+      }
+    }
+    
+    small {
+      color: var(--color-primary);
+    }
+  }
+}

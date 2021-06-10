@@ -4,13 +4,25 @@
 
   &__license-grid-wrapper {
     background: #fff;
-    padding-top: 50px;
+    padding-top: 25px;
+
+    @include desktop {
+      padding-top: 50px;
+    }
   }
 
   &__license-grid {
     margin: 0 auto;
-    padding-bottom: 50px;
-    width: 1200px;
+    max-width: 1200px;
+    padding: 0 15px 25px 15px;
+
+    @include tablet {
+      padding: 0 25px 25px 25px;
+    }
+    
+    @include desktop {
+      padding: 0 0 50px 0;
+    }
   }
 
   &__license-grid-list {
@@ -23,7 +35,11 @@
     }
 
     li {
-      padding: 0 20px;
+      padding: 0 5px;
+
+      @include tablet {
+        padding: 0 20px;
+      }
 
       &:first-child {
         padding-left: 0;
@@ -45,15 +61,32 @@
 
   &__newsletter-wrapper {
     background: var(--color-gray-darkest);
-    padding: 50px 0;
+    padding: 25px 0;
+
+    @include desktop {
+      padding: 50px 0;
+    }
   }
 
   &__newsletter {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    width: 1200px;
+    max-width: 1200px;
+    padding: 0 15px;
+    text-align: center;
+
+    @include tablet {
+      padding: 0 25px;
+    }
+    
+    @include desktop {
+      flex-direction: row;
+      padding: 0;
+      text-align: left;
+    }
   }
 
   &__newsletter-blurb {
@@ -62,23 +95,40 @@
       color: #fff;
       font-size: 25px;
       font-weight: bold;
+      line-height: 1.15;
       margin-bottom: 10px;
+
+      @include tablet {
+        line-height: 1;
+      }
     }
 
     h3 {
       color: var(--color-gray-light);
       font-size: 18px;
       font-weight: bold;
+      line-height: 1.25;
+      padding: 0 30px;
+
+      @include tablet {
+        line-height: 1;
+        padding: 0;
+      }
     }
   }
 
   &__newsletter-form {
     display: flex;
     flex-grow: 1;
-    padding-left: 50px;
+    margin-top: 20px;
+
+    @include desktop {
+      margin-top: 0;
+      padding-left: 50px;
+    }
 
     input {
-      background: #fff url(../img/icon-email.png) no-repeat 25px center;
+      background: #fff url(../img/icon-email.png) no-repeat 20px center;
       background-size: 46px;
       border: none;
       border-radius: 53px 0 0 53px;
@@ -88,7 +138,19 @@
       font-size: 18px;
       font-weight: bold;
       height: 51px;
-      padding: 0 0 2px 80px;
+      margin: 0;
+      max-width: 190px;
+      padding: 0 0 2px 75px;
+
+      @include tablet {
+        background-position: 25px center;
+        max-width: none;
+        padding: 0 0 2px 80px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
 
       &::placeholder {
         color: var(--color-gray-lighter);
@@ -105,15 +167,47 @@
       font-size: 18px;
       font-weight: bold;
       height: 53px;
-      padding: 0 25px 2px 25px;
+      margin: 0;
+      padding: 0 15px 2px 15px;
+      white-space: nowrap;
+
+      @include tablet {
+        padding: 0 25px 2px 25px;
+      }
+
+      &::after {
+        content: 'Join!';
+
+        @include tablet {
+          content: none;
+        }
+      }
+
+      span {
+        font-size: 0;
+
+        @include tablet {
+          font-size: 18px;
+        }
+      }
     }
   }
 
   &__links {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    padding: 50px 0;
-    width: 1200px;
+    max-width: 1200px;
+    padding: 25px 0;
+
+    @include tablet {
+      flex-direction: row;
+      padding: 25px;
+    }
+
+    @include desktop {
+      padding: 50px 0;
+    }
   }
 
   &__links-logo {
@@ -122,11 +216,37 @@
     display: block;
     font-size: 0;
     height: 28px;
+    margin: 0 auto 25px auto;
     width: 267px;
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__links-list {
-    margin-left: 150px;
+    text-align: center;
+    
+    @include tablet {
+      margin: 0 0 0 100px;
+      text-align: left;
+    }
+
+    @include desktop {
+      margin: 0 0 0 150px;
+    }
+
+    &:last-child {
+
+      &::before {
+        content: '\b7\a0';
+        color: var(--color-gray-light);
+
+        @include tablet {
+          content: '';
+        }
+      }
+    }
 
     li:not(:last-child) {
       margin-bottom: 10px;
@@ -135,6 +255,7 @@
     a {
       color: var(--color-gray-light);
       font-size: 15px;
+      margin-bottom: 25px;
       text-decoration: none;
 
       &:hover {
@@ -146,23 +267,48 @@
   &__social-wrapper {
     border-top: 1px solid var(--color-gray-dark);
     padding: 25px 0;
+
+    @include tablet {
+      padding: 25px;
+    }
+
+    @include desktop {
+      padding: 25px 0;
+    }
   }
 
   &__social {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    width: 1200px;
+    max-width: 1200px;
+
+    @include tablet {
+      flex-direction: row;
+    }
 
     small {
       color: var(--color-gray-light);
       font-size: 15px;
+      order: 2;
+
+      @include tablet {
+        order: 1;
+      }
     }
   }
 
   &__social-links {
     display: flex;
+    margin-bottom: 15px;
+    order: 1;
+
+    @include tablet {
+      margin-bottom: 0;
+      order: 2;
+    }
 
     li:not(:last-child) {
       margin-right: 10px;

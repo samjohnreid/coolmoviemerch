@@ -1,18 +1,26 @@
+@import 'mixins';
 @import 'reset';
 @import 'variables';
 @import 'masthead';
+@import 'subhead';
 @import 'item-grid';
 @import 'item-card';
 @import 'hero';
+@import 'aux';
 @import 'footer';
 
 body {
   background: var(--color-gray-darker);
   color: var(--color-gray-darkest);
   font-family: var(--font-primary);
+  min-width: 375px;
 }
 
 main {
   background: #fff;
-  padding-top: 50px;
+  padding-top: 25px;
+
+  @include desktop {
+    padding-top: 50px;
+  }
 }
