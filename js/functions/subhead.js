@@ -23,10 +23,9 @@ const subhead = () => {
         if (path === 'search-results') {
           // TODO: make this secure...?? 😬
           const searchQuery = new URLSearchParams(window.location.search).get('search');
-          const searchResultsCount = items.filter((item) => {
-            return item.title.toLowerCase().includes(searchQuery.toLowerCase());
-          });
-          const searchResultsTitle = `<span>Search for </span>&ldquo;${searchQuery}&rdquo; <small>(${searchResultsCount.length} results)</small>`;
+          const searchResultsCount = localStorage.getItem('searchResultsCount');
+          localStorage.removeItem('searchResultsCount');
+          const searchResultsTitle = `<span>Search for </span>&ldquo;${searchQuery}&rdquo; <small>(${searchResultsCount} results)</small>`;
           return searchResultsTitle;
         }
         switch (path) {

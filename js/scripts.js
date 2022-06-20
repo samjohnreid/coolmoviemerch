@@ -79,6 +79,8 @@ if (path === 'search-results') {
     return item.title.toLowerCase().includes(searchQuery);
   });
 
+  localStorage.setItem('searchResultsCount', searchResults.length);
+
   renderGridItems(searchResults);
 };
 
