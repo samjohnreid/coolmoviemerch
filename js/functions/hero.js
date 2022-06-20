@@ -12,9 +12,9 @@ const hero = () => {
       <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
         <div class="hero__image">
           <picture>
-            <source type="image/avif" srcset="/img/items/hero/${hero.img}.avif" media="(min-width: 1200px)">
-            <source type="image/avif" srcset="/img/items/hero/tablet/${hero.img}.avif" media="(min-width: 768px)">
-            <source type="image/avif" srcset="/img/items/hero/mobile/${hero.img}.avif">
+            <source srcset="/img/items/hero/${hero.img}.jpg" media="(min-width: 1200px)">
+            <source srcset="/img/items/hero/tablet/${hero.img}.jpg" media="(min-width: 768px)">
+            <source srcset="/img/items/hero/mobile/${hero.img}.jpg">
             <img src="/img/items/hero/mobile/${hero.img}.jpg" alt="">
           </picture>
         </div>
@@ -36,7 +36,7 @@ const hero = () => {
       <li>
         <button data-hero-nav-item="${index+1}">
           <picture>
-            <source type="image/avif" srcset="/img/items/hero/thumb/${hero.img}.avif">
+            <source srcset="/img/items/hero/thumb/${hero.img}.jpg">
             <img src="/img/items/hero/thumb/${hero.img}.jpg" alt="">
           </picture>
         </button>

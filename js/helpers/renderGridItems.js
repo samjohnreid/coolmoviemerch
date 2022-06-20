@@ -9,7 +9,7 @@ const renderGridItems = (itemData) => {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source type="image/avif" srcset="/img/items/${item.img}.avif">
+              <source srcset="/img/items/${item.img}.jpg">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>

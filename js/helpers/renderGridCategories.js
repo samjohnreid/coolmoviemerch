@@ -15,7 +15,7 @@ const renderGridCategories = (category) => {
         <div class="item-grid__image">
           <a href="/${path}/?id=${item.id}">
             <picture>
-              <source type="image/avif" type="image/avif" srcset="/img/items/${item.img}.avif">
+              <source srcset="/img/items/${item.img}.jpg">
               <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
             </picture>
           </a>
