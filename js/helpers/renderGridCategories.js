@@ -7,8 +7,6 @@ const gridContainer = document.querySelector('.item-grid__list');
 const renderGridCategories = (category) => {
   const categoryNavResultItems = category.map((item) => {
     const itemCount = items.filter(gridItem => gridItem.category === item.id);
-
-    console.log('path', path);
     
     return `
       <li class="item-grid__item">
