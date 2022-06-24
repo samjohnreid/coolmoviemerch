@@ -5,8 +5,19 @@ const path = appContainer.dataset.path;
 const gridContainer = document.querySelector('.item-grid__list');
 
 const renderGridCategories = (category) => {
+  let catType = '';
+  switch(window.location.pathname) {
+    case '/movie/':
+      catType = 'movie';
+      break;
+    case '/license/':
+      catType = 'license';
+      break;
+    default:
+      catType = 'category';
+  }
   const categoryNavResultItems = category.map((item) => {
-    const itemCount = items.filter(gridItem => gridItem.category === item.id);
+    const itemCount = items.filter(gridItem => gridItem[catType] === item.id);
     
     return `
       <li class="item-grid__item">
