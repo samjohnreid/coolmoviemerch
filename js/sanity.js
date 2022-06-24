@@ -2,8 +2,8 @@ const el = document.getElementById('samapp');
 
 // **********
 
-let PROJECT_ID = "";
-let DATASET = "";
+let PROJECT_ID = "nkto1d41";
+let DATASET = "production";
 
 const query = `*[_type == "item" && defined(category->name)]{
     name,
