@@ -17,7 +17,7 @@ export default `
     <div class="footer__license-grid-wrapper">
       <div class="footer__license-grid">
         <ul class="footer__license-grid-list">
-          <li><a href="/license/?id=1"><img src="/img/license-logos/harry-potter.png" alt="Harry Potter" loading="lazy"></a></li>
+          <li><a href="/license/?id=0e371e3a-759d-49dc-8cb7-e34a9418c035"><img src="/img/license-logos/harry-potter.png" alt="Harry Potter" loading="lazy"></a></li>
           <li><a href="/license/?id=2"><img src="/img/license-logos/disney.png" alt="Disney" loading="lazy"></a></li>
           <li><a href="/license/?id=3"><img src="/img/license-logos/star-wars.png" alt="Star Wars" loading="lazy"></a></li>
           <li><a href="/license/?id=4"><img src="/img/license-logos/jurassic-park.png" alt="Jurassic Park" loading="lazy"></a></li>

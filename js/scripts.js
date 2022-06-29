@@ -5,7 +5,7 @@ let movies = [];
 
 Promise.all([
   fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url}')}`),
+  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
   fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]{_id, name, "imageUrl": image.asset->url}')}`),
 	fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]{_id, name, year, directors, genre, "imageUrl": poster.asset->url}')}`)
 ]).then((responses) => {
@@ -92,7 +92,7 @@ const renderApp = () => {
 
   // ********** HERO **********
 
-  // hero();
+  hero();
 
 
   // ------------------------------------------------------------
@@ -140,8 +140,6 @@ const renderApp = () => {
     const categoryResults = items.filter((item) => {
       return item.category === catId;
     });
-
-    console.log('categoryResults', categoryResults);
 
     renderGridItems(categoryResults);
   };
@@ -216,7 +214,7 @@ const renderApp = () => {
 
   // ********** LICENSES NAVIGATION **********
 
-  path === 'license' && !window.location.search && renderGridCategories(licenses);console.log('hello!', licenses);
+  path === 'license' && !window.location.search && renderGridCategories(licenses);
 
 
   // ------------------------------------------------------------
