@@ -1,29 +1,29 @@
-let _categories = [];
-let _items = [];
-let _licenses = [];
-let _movies = [];
+let categories = [];
+let items = [];
+let licenses = [];
+let movies = [];
 
 Promise.all([
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]')}`),
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{ name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url }')}`),
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]')}`),
-	fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]')}`)
+  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
+  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url}')}`),
+  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]{_id, name, "imageUrl": image.asset->url}')}`),
+	fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]{_id, name, year, directors, genre, "imageUrl": poster.asset->url}')}`)
 ]).then((responses) => {
 	return Promise.all(responses.map(function (response) {
 		return response.json();
 	}));
 }).then((data) => {
-  _categories = data.find(el => el.query.includes('"category"]'));
-  _categories = _categories.result;
+  categories = data.find(el => el.query.includes('"category"]'));
+  categories = categories.result;
   
-  _items = data.find(el => el.query.includes('"item"'));
-  _items = _items.result;
+  items = data.find(el => el.query.includes('"item"'));
+  items = items.result;
   
-  _licenses = data.find(el => el.query.includes('"license"]'));
-  _licenses = _licenses.result;
+  licenses = data.find(el => el.query.includes('"license"]'));
+  licenses = licenses.result;
   
-  _movies = data.find(el => el.query.includes('"movie"]'));
-  _movies = _movies.result;
+  movies = data.find(el => el.query.includes('"movie"]'));
+  movies = movies.result;
 
   renderApp();
 }).catch((error) => {
@@ -35,10 +35,10 @@ Promise.all([
 
 
 // Data
-import categories from './data/categories.js';
-import movies from './data/movies.js';
-import licenses from './data/licenses.js';
-import items from './data/items.js';
+// import categories from './data/categories.js';
+// import movies from './data/movies.js';
+// import licenses from './data/licenses.js';
+// import items from './data/items.js';
 
 // Functions
 import metaData from './functions/metaData.js';
@@ -61,6 +61,11 @@ const path = appContainer.dataset.path;
 
 const renderApp = () => {
   
+  console.log('categories: ', categories);
+  console.log('items: ', items);
+  console.log('licenses: ', licenses);
+  console.log('movies: ', movies);
+
   // Page Titles and Meta Descriptions
 
   metaData();
@@ -87,7 +92,7 @@ const renderApp = () => {
 
   // ********** HERO **********
 
-  hero();
+  // hero();
 
 
   // ------------------------------------------------------------
@@ -131,10 +136,12 @@ const renderApp = () => {
   if (path === 'category' && window.location.search) {
     // TODO: make this secure...?? 😬
     const catId = new URLSearchParams(window.location.search).get('id');
-
+    
     const categoryResults = items.filter((item) => {
-      return item.category === parseInt(catId);
+      return item.category === catId;
     });
+
+    console.log('categoryResults', categoryResults);
 
     renderGridItems(categoryResults);
   };
@@ -150,7 +157,7 @@ const renderApp = () => {
     const movieId = new URLSearchParams(window.location.search).get('id');
 
     const movieResults = items.filter((item) => {
-      return item.movie === parseInt(movieId);
+      return item.movie === movieId;
     });
 
     renderGridItems(movieResults);
@@ -166,7 +173,7 @@ const renderApp = () => {
     const licenseId = new URLSearchParams(window.location.search).get('id');
 
     const licenseResults = items.filter((item) => {
-      return item.license === parseInt(licenseId);
+      return item.license === licenseId;
     });
 
     renderGridItems(licenseResults);
@@ -209,7 +216,7 @@ const renderApp = () => {
 
   // ********** LICENSES NAVIGATION **********
 
-  path === 'license' && !window.location.search && renderGridCategories(licenses);
+  path === 'license' && !window.location.search && renderGridCategories(licenses);console.log('hello!', licenses);
 
 
   // ------------------------------------------------------------
@@ -226,5 +233,6 @@ const renderApp = () => {
   // ********** AUXILIARY PAGES **********
 
   auxPages();
+
 
 }
