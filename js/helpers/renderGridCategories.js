@@ -1,17 +1,5 @@
-let items = [];
-
-Promise.all([
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
-]).then((responses) => {
-	return Promise.all(responses.map(function (response) {
-		return response.json();
-	}));
-}).then((data) => {
-  items = data.find(el => el.query.includes('"item"'));
-  items = items.result;
-}).catch((error) => {
-	console.log(error);
-});
+const itemsGet = localStorage.getItem('itemsSet');
+const items = JSON.parse(itemsGet);
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
