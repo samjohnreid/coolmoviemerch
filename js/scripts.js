@@ -9,6 +9,7 @@ import hero from './functions/hero.js';
 // Helpers
 import renderGridItems from './helpers/renderGridItems.js';
 import renderGridCategories from './helpers/renderGridCategories.js';
+import cacheBustData from './helpers/cacheBustData.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
@@ -19,9 +20,6 @@ const path = appContainer.dataset.path;
 
 const renderApp = () => {
 
-
-  localStorage.setItem('dataStoredLocally', true);
-  localStorage.setItem('timeStamp', new Date());
   
   const categoriesGet = localStorage.getItem('categoriesSet');
   categories = JSON.parse(categoriesGet);
@@ -220,11 +218,7 @@ let movies = [];
 
 const localStorageCheck = localStorage.getItem('dataStoredLocally');
 
-const timeElapsed = () => {
-  return true; // add funciton to check if data pull from Sanity is over a certain time, if so bust cache
-}
-
-if (!localStorageCheck && timeElapsed()) {
+if (!localStorageCheck || cacheBustData(localStorage.getItem('timeStamp'))) {
   Promise.all([
     fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
     fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
@@ -246,6 +240,9 @@ if (!localStorageCheck && timeElapsed()) {
     
     movies = data.find(el => el.query.includes('"movie"]'));
     localStorage.setItem('moviesSet', JSON.stringify(movies.result));
+
+    localStorage.setItem('dataStoredLocally', true);
+    localStorage.setItem('timeStamp', new Date());
   
     renderApp();
   }).catch((error) => {
