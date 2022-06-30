@@ -90,7 +90,7 @@ const renderApp = () => {
     const searchQuery = new URLSearchParams(window.location.search).get('search').toLowerCase();
 
     const searchResults = items.filter((item) => {
-      return item.title.toLowerCase().includes(searchQuery);
+      return item.name.toLowerCase().includes(searchQuery);
     });
 
     localStorage.setItem('searchResultsCount', searchResults.length);
