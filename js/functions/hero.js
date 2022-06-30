@@ -70,7 +70,6 @@ const hero = () => {
   const activateFirstSlide = slideNum => slideNum === 0 ? 'hero__product--active' : '';
 
   const heroItems = heroes.map((hero, index) => {
-    console.log('hero', hero);
     return `
       <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
         <div class="hero__image">

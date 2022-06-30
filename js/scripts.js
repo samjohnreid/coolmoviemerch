@@ -1,45 +1,3 @@
-let categories = [];
-let items = [];
-let licenses = [];
-let movies = [];
-
-Promise.all([
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
-  fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]{_id, name, "imageUrl": image.asset->url}')}`),
-	fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]{_id, name, year, directors, genre, "imageUrl": poster.asset->url}')}`)
-]).then((responses) => {
-	return Promise.all(responses.map(function (response) {
-		return response.json();
-	}));
-}).then((data) => {
-  categories = data.find(el => el.query.includes('"category"]'));
-  categories = categories.result;
-  
-  items = data.find(el => el.query.includes('"item"'));
-  items = items.result;
-  
-  licenses = data.find(el => el.query.includes('"license"]'));
-  licenses = licenses.result;
-  
-  movies = data.find(el => el.query.includes('"movie"]'));
-  movies = movies.result;
-
-  renderApp();
-}).catch((error) => {
-	console.log(error);
-});
-
-
-// ------------------------------------------------------------
-
-
-// Data
-// import categories from './data/categories.js';
-// import movies from './data/movies.js';
-// import licenses from './data/licenses.js';
-// import items from './data/items.js';
-
 // Functions
 import metaData from './functions/metaData.js';
 import mobileNavMenu from './functions/mobileNavMenu.js';
@@ -60,11 +18,26 @@ const path = appContainer.dataset.path;
 
 
 const renderApp = () => {
+
+
+  localStorage.setItem('dataStoredLocally', true);
+  localStorage.setItem('timeStamp', new Date());
   
-  console.log('categories: ', categories);
-  console.log('items: ', items);
-  console.log('licenses: ', licenses);
-  console.log('movies: ', movies);
+  const categoriesGet = localStorage.getItem('categoriesSet');
+  categories = JSON.parse(categoriesGet);
+
+  const itemsGet = localStorage.getItem('itemsSet');
+  items = JSON.parse(itemsGet);
+
+  const licensesGet = localStorage.getItem('licensesSet');
+  licenses = JSON.parse(licensesGet);
+
+  const moviesGet = localStorage.getItem('moviesSet');
+  movies = JSON.parse(moviesGet);
+
+
+  // ------------------------------------------------------------
+
 
   // Page Titles and Meta Descriptions
 
@@ -233,4 +206,51 @@ const renderApp = () => {
   auxPages();
 
 
+}
+
+
+// ------------------------------------------------------------
+
+
+// Data
+let categories = [];
+let items = [];
+let licenses = [];
+let movies = [];
+
+const localStorageCheck = localStorage.getItem('dataStoredLocally');
+
+const timeElapsed = () => {
+  return true; // add funciton to check if data pull from Sanity is over a certain time, if so bust cache
+}
+
+if (!localStorageCheck && timeElapsed()) {
+  Promise.all([
+    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
+    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
+    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]{_id, name, "imageUrl": image.asset->url}')}`),
+    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]{_id, name, year, directors, genre, "imageUrl": poster.asset->url}')}`)
+  ]).then((responses) => {
+    return Promise.all(responses.map(function (response) {
+      return response.json();
+    }));
+  }).then((data) => {
+    categories = data.find(el => el.query.includes('"category"]'));
+    localStorage.setItem('categoriesSet', JSON.stringify(categories.result));
+    
+    items = data.find(el => el.query.includes('"item"'));
+    localStorage.setItem('itemsSet', JSON.stringify(items.result));
+    
+    licenses = data.find(el => el.query.includes('"license"]'));
+    localStorage.setItem('licensesSet', JSON.stringify(licenses.result));
+    
+    movies = data.find(el => el.query.includes('"movie"]'));
+    localStorage.setItem('moviesSet', JSON.stringify(movies.result));
+  
+    renderApp();
+  }).catch((error) => {
+    console.log(error);
+  });
+} else {
+  renderApp();
 }
