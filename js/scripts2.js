@@ -1,44 +1,69 @@
-let PROJECT_ID = "nkto1d41";
-let DATASET = "production";
-let QUERY_CATEGORIES = encodeURIComponent('*[_type == "category"]');
-let QUERY_ITEMS = encodeURIComponent('*[_type == "item"]');
-let QUERY_LICENSES = encodeURIComponent('*[_type == "license"]');
-let QUERY_MOVIES = encodeURIComponent('*[_type == "movie"]');
+const PROJECT_ID = "nkto1d41";
+const DATASET = "production";
+const API_PATH = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=`;
 
-const categories = fetch(`https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_CATEGORIES}`)
-  .then(data => data.json())
-  .then(data => console.log('Data for Categories:', data))
-  .catch(err => console.error('Oh no!', err))
-;
+const QUERY_CATEGORIES = encodeURIComponent('*[_type == "category"]');
+const QUERY_ITEMS = encodeURIComponent('*[_type == "item"]');
+const QUERY_LICENSES = encodeURIComponent('*[_type == "license"]');
+const QUERY_MOVIES = encodeURIComponent('*[_type == "movie"]');
 
-const items = fetch(`https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_ITEMS}`)
-  .then(data => data.json())
-  .then(data => {
-    console.log('Data for Items:', data);
-    console.log('hello');
-    const dataItems = data;
-    return dataItems;
+const categoriesPromise = fetch(`${API_PATH}${QUERY_CATEGORIES}`);
+const itemsPromise = fetch(`${API_PATH}${QUERY_ITEMS}`);
+const licensesPromise = fetch(`${API_PATH}${QUERY_LICENSES}`);
+const moviesPromise = fetch(`${API_PATH}${QUERY_MOVIES}`);
+
+Promise
+  .all([categoriesPromise, itemsPromise, licensesPromise, moviesPromise])
+  .then((responses) => {
+    return Promise.all(responses.map(response => response.json()));
   })
-  .then((dataItems) => {
-    console.log('dataItems: ', dataItems);
+  .then((responses) => {
+    console.log('responses:', responses);
   })
-  .catch(err => console.error('Oh no!', err))
 ;
 
-const licenses = fetch(`https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_LICENSES}`)
-  .then(data => data.json())
-  .then(data => console.log('Data for Licenses:', data))
-  .catch(err => console.error('Oh no!', err))
-;
 
-const movies = fetch(`https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY_MOVIES}`)
-  .then(data => data.json())
-  .then(data => console.log('Data for Movies:', data))
-  .catch(err => console.error('Oh no!', err))
-;
 
-console.log('categories', categories);
-console.log('items', items);
-console.log('licenses', licenses);
-console.log('movies', movies);
-console.log('dataItems: ', dataItems);
+
+
+
+
+
+
+
+
+// const prom1 = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve(['one', 'two', 'three']);
+//   }, 1000);
+// });
+
+// const prom2 = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve({name: 'Sam', age: 44, country: 'UK and USA'});
+//   }, 3000);
+// });
+
+// const prom3 = new Promise((resolve) => {
+//   setTimeout(() => {
+//     resolve(['four', 'five', 'six']);
+//   }, 5000);
+// });
+
+// prom1.then((data) => {
+//   console.log(data);
+// });
+
+// prom2.then((data) => {
+//   console.log(data);
+// });
+
+// prom3.then((data) => {
+//   console.log(data);
+// });
+
+// Promise
+//   .all([prom1, prom2, prom3])
+//   .then((responses) => {
+//     console.log('all promises fulfilled!', responses[2]);
+//   });
