@@ -12,58 +12,25 @@ const itemsPromise = fetch(`${API_PATH}${QUERY_ITEMS}`);
 const licensesPromise = fetch(`${API_PATH}${QUERY_LICENSES}`);
 const moviesPromise = fetch(`${API_PATH}${QUERY_MOVIES}`);
 
+let categories = [];
+let items = [];
+let licenses = [];
+let movies = [];
+
 Promise
   .all([categoriesPromise, itemsPromise, licensesPromise, moviesPromise])
   .then((responses) => {
     return Promise.all(responses.map(response => response.json()));
   })
-  .then((responses) => {
-    console.log('responses:', responses);
+  .then((data) => {
+    categories = data.find(el => el.query.includes('"category"]')).result;
+    items = data.find(el => el.query.includes('"item"')).result;
+    licenses = data.find(el => el.query.includes('"license"]')).result;
+    movies = data.find(el => el.query.includes('"movie"]')).result;
+
+    console.log('categories:', categories);
+    console.log('items:', items);
+    console.log('licenses:', licenses);
+    console.log('movies:', movies);
   })
 ;
-
-
-
-
-
-
-
-
-
-
-
-// const prom1 = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve(['one', 'two', 'three']);
-//   }, 1000);
-// });
-
-// const prom2 = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve({name: 'Sam', age: 44, country: 'UK and USA'});
-//   }, 3000);
-// });
-
-// const prom3 = new Promise((resolve) => {
-//   setTimeout(() => {
-//     resolve(['four', 'five', 'six']);
-//   }, 5000);
-// });
-
-// prom1.then((data) => {
-//   console.log(data);
-// });
-
-// prom2.then((data) => {
-//   console.log(data);
-// });
-
-// prom3.then((data) => {
-//   console.log(data);
-// });
-
-// Promise
-//   .all([prom1, prom2, prom3])
-//   .then((responses) => {
-//     console.log('all promises fulfilled!', responses[2]);
-//   });
