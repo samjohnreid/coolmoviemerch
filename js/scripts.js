@@ -1,15 +1,17 @@
+// Data
+import { categories, items, licenses, movies } from './functions/fetchData.js';
+
 // Functions
 import metaData from './functions/metaData.js';
 import mobileNavMenu from './functions/mobileNavMenu.js';
 import movieQuotes from './functions/movieQuotes.js';
 import subhead from './functions/subhead.js';
 import auxPages from './functions/auxPages.js';
-import hero from './functions/hero.js';
 
 // Helpers
 import renderGridItems from './helpers/renderGridItems.js';
 import renderGridCategories from './helpers/renderGridCategories.js';
-import cacheBustData from './helpers/cacheBustData.js';
+import { getMovieOrLicense, getCategory } from './helpers/getItemInfo.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
@@ -18,23 +20,7 @@ const path = appContainer.dataset.path;
 // ------------------------------------------------------------
 
 
-const renderApp = () => {
-
-  
-  const categoriesGet = localStorage.getItem('categoriesSet');
-  categories = JSON.parse(categoriesGet);
-
-  const itemsGet = localStorage.getItem('itemsSet');
-  items = JSON.parse(itemsGet);
-
-  const licensesGet = localStorage.getItem('licensesSet');
-  licenses = JSON.parse(licensesGet);
-
-  const moviesGet = localStorage.getItem('moviesSet');
-  movies = JSON.parse(moviesGet);
-
-
-  // ------------------------------------------------------------
+const renderApp = (categories, items, licenses, movies) => {
 
 
   // Page Titles and Meta Descriptions
@@ -63,6 +49,73 @@ const renderApp = () => {
 
   // ********** HERO **********
 
+  const heroes = items.filter(el => el.hero === true);
+  
+  const hero = () => {
+    const activateFirstSlide = slideNum => slideNum === 0 ? 'hero__product--active' : '';
+  
+    const heroItems = heroes.map((hero, index) => {
+      return `
+        <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
+          <div class="hero__image">
+            <picture>
+              <source srcset="${hero.heroImageDesktopUrl}" media="(min-width: 1200px)">
+              <source srcset="${hero.heroImageTabletUrl}" media="(min-width: 768px)">
+              <source srcset="${hero.heroImageMobileUrl}">
+              <img src="${hero.heroImageMobileUrl}" alt="">
+            </picture>
+          </div>
+          <div class="hero__details">
+            <h2 class="hero__title"><a href="${hero.url}">${hero.name}</a></h2>
+            <div class="hero__price"><span>$</span>${hero.price.toFixed(2)}</div>
+            <ul class="hero__tags">
+              <li>${getMovieOrLicense(hero.movie, hero.license)}</li>
+              <li><a href="/category/?id=${hero.category}">${getCategory(hero.category)}</a></li>
+            </ul>
+            <a href="${hero.url}" class="hero__button">BUY NOW</a>
+          </div>
+        </li>
+      `;
+    }).join('');
+    
+    const heroNavItems = heroes.map((hero, index) => {
+      return `
+        <li>
+          <button data-hero-nav-item="${index+1}">
+            <picture>
+              <source srcset="${hero.heroImageThumbUrl}">
+              <img src="${hero.heroImageThumbUrl}" alt="">
+            </picture>
+          </button>
+        </li>
+      `;
+    }).join('');
+    
+    const heroContainer = document.querySelector('.hero__products');
+    const heroNavContainer = document.querySelector('.hero__nav');
+    
+    if (heroContainer) {
+      heroContainer.innerHTML = heroItems;
+      heroNavContainer.innerHTML = heroNavItems;
+    };
+    
+    // Hero navigation
+    
+    const heroSlides = document.querySelectorAll('.hero__product');
+    
+    const heroNav = (target) => {
+      heroSlides.forEach((slide) => {
+        slide.classList.remove('hero__product--active');
+        slide.dataset.heroItem === target && slide.classList.add('hero__product--active');
+      });
+    }
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.matches('.hero__nav li button')) return;
+      heroNav(e.target.dataset.heroNavItem);
+    });
+  };
+  
   hero();
 
 
@@ -210,45 +263,4 @@ const renderApp = () => {
 // ------------------------------------------------------------
 
 
-// Data
-let categories = [];
-let items = [];
-let licenses = [];
-let movies = [];
-
-const localStorageCheck = localStorage.getItem('dataStoredLocally');
-const forceNewDataFetch = new URLSearchParams(window.location.search).has('cache');
-
-if (!localStorageCheck || cacheBustData(localStorage.getItem('timeStamp')) || forceNewDataFetch) {
-  Promise.all([
-    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "category"]{_id, name, "imageUrl": image.asset->url}')}`),
-    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "item" && defined(category->name)]{name, price, url, "movie": movie._ref, "category": category._ref, "license": license._ref, "imageUrl": image.asset->url, featured, hero, "heroImageThumbUrl": heroImageThumb.asset->url, "heroImageDesktopUrl": heroImageDesktop.asset->url, "heroImageTabletUrl": heroImageTablet.asset->url, "heroImageMobileUrl": heroImageMobile.asset->url}')}`),
-    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "license"]{_id, name, "imageUrl": image.asset->url}')}`),
-    fetch(`https://nkto1d41.api.sanity.io/v2021-10-21/data/query/production?query=${encodeURIComponent('*[_type == "movie"]{_id, name, year, directors, genre, "imageUrl": poster.asset->url}')}`)
-  ]).then((responses) => {
-    return Promise.all(responses.map(function (response) {
-      return response.json();
-    }));
-  }).then((data) => {
-    categories = data.find(el => el.query.includes('"category"]'));
-    localStorage.setItem('categoriesSet', JSON.stringify(categories.result));
-    
-    items = data.find(el => el.query.includes('"item"'));
-    localStorage.setItem('itemsSet', JSON.stringify(items.result));
-    
-    licenses = data.find(el => el.query.includes('"license"]'));
-    localStorage.setItem('licensesSet', JSON.stringify(licenses.result));
-    
-    movies = data.find(el => el.query.includes('"movie"]'));
-    localStorage.setItem('moviesSet', JSON.stringify(movies.result));
-
-    localStorage.setItem('dataStoredLocally', true);
-    localStorage.setItem('timeStamp', new Date());
-  
-    renderApp();
-  }).catch((error) => {
-    console.log(error);
-  });
-} else {
-  renderApp();
-}
+window.addEventListener('dataFetched', () => renderApp(categories, items, licenses, movies));

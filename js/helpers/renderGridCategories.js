@@ -1,5 +1,4 @@
-const itemsGet = localStorage.getItem('itemsSet');
-const items = JSON.parse(itemsGet);
+import { items } from '../functions/fetchData.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;

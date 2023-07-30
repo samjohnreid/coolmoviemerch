@@ -1,11 +1,4 @@
-const categoriesGet = localStorage.getItem('categoriesSet');
-const categories = JSON.parse(categoriesGet);
-
-const licensesGet = localStorage.getItem('licensesSet');
-const licenses = JSON.parse(licensesGet);
-
-const moviesGet = localStorage.getItem('moviesSet');
-const movies = JSON.parse(moviesGet);
+import { categories, licenses, movies } from './fetchData.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;

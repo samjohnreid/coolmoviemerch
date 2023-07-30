@@ -1,16 +1,12 @@
+// Data
+import { items } from '../functions/fetchData.js';
 import { getMovieOrLicense, getCategory } from '../helpers/getItemInfo.js';
 
-const localStorageCheck = localStorage.getItem('dataStoredLocally');
+const heroes = items.filter(el => el.hero === true);console.log('hi sam', items);
 
-let itemsGet = null;
-let items = null;
-let heroes = null;
-
-if (localStorageCheck) {
-  itemsGet = localStorage.getItem('itemsSet');
-  items = JSON.parse(itemsGet);
-  heroes = items.filter(el => el.hero === true);
-}
+window.addEventListener('dataFetched', () => {
+  console.log('woot!', items);
+});
 
 // code for adding Product Details, add directly below <ul class="hero__tags">
 // <div class="hero__more-details"><a href="">Product Details</a></div>
@@ -18,7 +14,7 @@ if (localStorageCheck) {
 const hero = () => {
   const activateFirstSlide = slideNum => slideNum === 0 ? 'hero__product--active' : '';
 
-  const heroItems = localStorageCheck && heroes.map((hero, index) => {
+  const heroItems = heroes.map((hero, index) => {
     return `
       <li class="hero__product ${activateFirstSlide(index)}" data-hero-item="${index+1}">
         <div class="hero__image">
