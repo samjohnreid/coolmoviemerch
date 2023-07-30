@@ -6,11 +6,7 @@ const gridContainer = document.querySelector('.item-grid__list');
 
 const renderGridCategories = (category) => {
   let catType = '';
-<<<<<<< HEAD
-
-=======
   
->>>>>>> removing-local-storage
   switch(window.location.pathname) {
     case '/movie/':
       catType = 'movie';
@@ -23,11 +19,7 @@ const renderGridCategories = (category) => {
   }
 
   const categoryNavResultItems = category.map((item) => {
-<<<<<<< HEAD
-    const itemCount = items.filter(gridItem => gridItem[catType] === item.id);
-=======
     const itemCount = items.filter(gridItem => gridItem[catType] === item._id);
->>>>>>> removing-local-storage
     
     return `
       <li class="item-grid__item">
