@@ -9,13 +9,13 @@ const renderGridItems = (itemData) => {
         <div class="item-grid__image">
           <a href="${item.url}">
             <picture>
-              <source srcset="/img/items/${item.img}.jpg">
-              <img src="/img/items/${item.img}.jpg" alt="Thumbnail image for ${item.title}" loading="lazy">
+              <source srcset="${item.imageUrl}">
+              <img src="${item.imageUrl}" alt="Thumbnail image for ${item.name}" loading="lazy">
             </picture>
           </a>
         </div>
         <div class="item-grid__details">
-          <h2 class="item-grid__title"><a href="${item.url}">${item.title}</a></h2>
+          <h2 class="item-grid__title"><a href="${item.url}">${item.name}</a></h2>
           <div class="item-grid__price"><span>$</span>${item.price.toFixed(2)}</div>
           <ul class="item-grid__tags">
             <li>${getMovieOrLicense(item.movie, item.license)}</li>

@@ -1,6 +1,4 @@
-import categories from '../data/categories.js';
-import movies from '../data/movies.js';
-import licenses from '../data/licenses.js';
+import { categories, licenses, movies } from './fetchData.js';
 
 const appContainer = document.getElementById('app');
 const path = appContainer.dataset.path;
@@ -42,11 +40,11 @@ const subhead = () => {
           case 'newsletter': return 'Thank you for signing up!';
         }
       }
-      const getEl = titleMap.get(path).find(el => el.id === id);
-      return getEl.title;
+      const getEl = titleMap.get(path).find(el => el._id === id);
+      return getEl.name;
     }
   
-    const subheadTitle = `<h1 class="subhead__title">${getTitle(parseInt(pageId))}</h1>`;
+    const subheadTitle = `<h1 class="subhead__title">${getTitle(pageId)}</h1>`;
   
     subheadContainer.innerHTML = subheadTitle;
   };
